@@ -1,0 +1,12 @@
+div:first-of-type{
+    background-color: #db0029;  
+    color: white;
+    font-family: sans-serif;
+    padding: .625rem 2rem .625rem 4.1875rem; 
+    /* https://www.ns.nl/platform/components/notification-bar.html bron voor modifier padding waardes */
+
+    text-align: center;
+}
+
+    /* custom properties aanmaken voor de kleuren, margins, enzv */
+    /* General styling maken */
