@@ -1,12 +1,76 @@
-div:first-of-type{
+/****************************/
+/* ✨✨ GENERAL STYLING ✨✨ */
+/***************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    align-items: center;
+
+
+      /* Fonts */
+      --pixelify-sans: "Pixelify Sans", sans-serif;
+      --pixelify-weight-400: 400;
+      --pixelify-weight-600: 600;
+      --pixelify-weight-900: 900;
+  
+  
+      /* Font sizes web & mobile */
+      --h1-small: 1.5em;
+      --p-small: 2em;
+  
+      /* Colors */
+      --black: rgb(0 0 0);
+      --white: rgb(255 255 255);
+      --yellow: rgb(255 226 139);
+      --yellow-dark: rgb(211 157 25);
+      --light-grey: rgb(231 233 234);
+      --medium-grey: rgb(185 191 192);
+      --dark-grey: rgb(167 174 175);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* div:first-of-type{
     background-color: #db0029;  
     color: white;
     font-family: sans-serif;
     padding: .625rem 2rem .625rem 4.1875rem; 
     /* https://www.ns.nl/platform/components/notification-bar.html bron voor modifier padding waardes */
 
-    text-align: center;
-}
-
+    /* text-align: center; */
+/*  */
     /* custom properties aanmaken voor de kleuren, margins, enzv */
     /* General styling maken */
+    
+
+
