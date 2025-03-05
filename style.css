@@ -15,7 +15,7 @@
 /***************************/
 
 @font-face {
-    font-family: "Carto Gothic";
+    font-family: "Carto Gothic bold";
     font-weight: bold;
     src: url(../assets/CartoGothicStd-Bold.otf) format("opentype");
   }
@@ -26,6 +26,8 @@
     src: url(../assets/CartoGothicStd-Book.otf) format("opentype");
   }
 
+
+
 body {
 
 
@@ -34,14 +36,9 @@ body {
     /***************************/
 
       /* Fonts */
+      --NS-Sans-Regular:"Carto Gothic", sans-serif;
+      --NS-Sans-Bold:"Carto Gothic bold";
 
-
-      
-      --pixelify-sans: "Pixelify Sans", sans-serif;
-      --pixelify-weight-400: 400;
-      --pixelify-weight-600: 600;
-      --pixelify-weight-900: 900;
-  
   
       /* Font sizes web & mobile */
       --h1-small: 1.5em;
@@ -78,23 +75,70 @@ body {
       --ns-grey-alpha-15 : #070721 (15%);
       --ns-grey-alpha-10 : #070721 (10%);
 
+     /* Grid */
+
+     --full-width: 100%;
+     --desktop-width: 1200px;
+     --phone-width: 280px;
+     --desktop-grid: 12;
+     --iphone-grid: 4;
+     --gap: 28px;
+     --margin: 14px;
 
 
+
+   /* ✨✨ General ✨✨ */
       display: flex;
       flex-direction: column;
       align-items: center;
 }
 
-
-header p{
-    color: var(--ns-white);
-    font-family: "Carto Gothic";
-}
-
 header{
     background-color: var(--ns-red-alert);
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
+
+header p{
+    color: var(--ns-white);
+    font-family: var(--NS-Sans-Bold);
+    margin: 7px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: var(--margin);
+    max-width: 280px;
+}
+
+
+/****************************/
+/* ✨✨      Media      ✨✨ */
+/***************************/
+@media (min-width: 300px){
+    main{
+        max-width: 1200px;
+        margin: var(--margin);
+    }
+}
+
+@media (min-width: 600px){
+    main{
+        max-width: 1200px;
+        margin: var(--margin);
+    }
+}
+
+@media (min-width: 900px){
+    main{
+        max-width: 1200px;
+        margin: var(--margin);
+    }
+}
+
+
 
 
 
