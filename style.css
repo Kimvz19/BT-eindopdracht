@@ -9,15 +9,34 @@
     list-style: none;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1em;
-    align-items: center;
 
+/****************************/
+/* ✨✨      FONTS      ✨✨ */
+/***************************/
+
+@font-face {
+    font-family: "Carto Gothic";
+    font-weight: bold;
+    src: url(../assets/CartoGothicStd-Bold.otf) format("opentype");
+  }
+
+
+  @font-face {
+    font-family: "Carto Gothic";
+    src: url(../assets/CartoGothicStd-Book.otf) format("opentype");
+  }
+
+body {
+
+
+    /****************************/
+    /* ✨✨ Custom properties ✨✨ */
+    /***************************/
 
       /* Fonts */
+
+
+      
       --pixelify-sans: "Pixelify Sans", sans-serif;
       --pixelify-weight-400: 400;
       --pixelify-weight-600: 600;
@@ -28,14 +47,53 @@ body {
       --h1-small: 1.5em;
       --p-small: 2em;
   
-      /* Colors */
-      --black: rgb(0 0 0);
-      --white: rgb(255 255 255);
-      --yellow: rgb(255 226 139);
-      --yellow-dark: rgb(211 157 25);
-      --light-grey: rgb(231 233 234);
-      --medium-grey: rgb(185 191 192);
-      --dark-grey: rgb(167 174 175);
+      /* NS Colors */
+      --ns-yellow: #ffc917;
+      --ns-blue: #003082;
+      --ns-light-blue: #0063d3;
+      
+      --ns-white: #ffffff;
+      --ns-grey: #070721;
+      --ns-grey-10: #202037;
+      --ns-grey-20: #39394D;
+      --ns-grey-30: #515164;
+      --ns-grey-40: #6a6a7a;
+      --ns-grey-50: #838390;
+      --ns-grey-60: #9c9ca6;
+      --ns-grey-70: #b5b5bc;
+      --ns-grey-80: #cdcdd3;
+      --ns-grey-90: #e6e6e9;
+      --ns-grey-94: #f0f0f2;
+      
+      --ns-red-alert: #db0029;
+      --ns-green: #009a42;
+      --ns-ovchip: #ff0098;
+      --ns-ovorange: #ff7700;
+      
+      --ns-light-blue: #0079d3;
+      --ns-light-blue-2: #005ca0;
+      --ns-yellow-2: #ffb519;
+      
+      --ns-grey-alpha-60: #070721 (60%);
+      --ns-grey-alpha-15 : #070721 (15%);
+      --ns-grey-alpha-10 : #070721 (10%);
+
+
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+
+header p{
+    color: var(--ns-white);
+    font-family: "Carto Gothic";
+}
+
+header{
+    background-color: var(--ns-red-alert);
+    width: 100%;
 }
 
 
