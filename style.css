@@ -182,9 +182,10 @@ h2{
     line-height: calc(1.07em + 6px) ;
 }
 
-h3{
+h3, summary {
     font-family: var( --NS-Inter);
     font-weight: 500;
+    font-size: 1.15rem;
 }
 
 p{
@@ -195,7 +196,6 @@ p{
 div:first-of-type{
     display: flex;
     flex-direction: row;
-    background-color: green;
     justify-content: space-between;
     gap: 28px;
 }
