@@ -13,114 +13,195 @@
 
         <form>
 
-
             <!-- 👻👻👻👻👻👻 -->
             <!-- vraag 1a -->
             <!-- 👻👻👻👻👻👻 -->
+
             <fieldset>
-            
-                     <!-- voornaam -->
-                     <fieldset><label>voornaam<input type="text" name="voornaam"></label> </fieldset>    
-                <br><br>
-                    <!-- tussenvoegsel -->
-                <label>tussenvoegsel<input type="text" name="tussenvoegsel"></label>
-                <br><br>
-                  <!-- achternaam -->
-                <label>achternaam<input type="text" name="achternaam"></label>
+                <legend>1a</legend>
+                 <!-- voorletter -->
+                 <label>Voorletter(s)<input type="text" name="voorl"></label>
+                 <!-- tussenvoegsel -->
+                 <label>tussenvoegsel<input type="text" name="tussenv"></label>
+                 <!-- achternaam -->
+                 <label>achternaam<input type="text" name="achtern"></label>
             </fieldset>
 
-            <br><br>
             <fieldset>
-                  <!-- BSN nummer -->
-                <label>burgerservicenummer overledene<input type="text" name="tentacles">
-                    <a
-                        href="https://www.rijksoverheid.nl/onderwerpen/privacy-en-persoonsgegevens/vraag-en-antwoord/wat-is-het-burgerservicenummer-bsn#:~:text=Burgerservicenummer%20opvragen&text=De%20Nederlandse%20identiteitskaart%20heeft%20het,nummer%20bestaat%20uit%209%20cijfers.">info
-                        over BSN 
-                    </a>
-                </label>
-            </fieldset>
 
-            <br><br>
+                <!-- 👻👻👻👻👻👻 -->
+                <!-- vraag 1b -->
+                <!-- 👻👻👻👻👻👻 -->
 
-            <fieldset>
-                  <!-- Overlijdensdatum -->
-                <label>overlijdensdatum<input type="date" name="overlijdensdatum" max="2025-03-24">
-            </label>
-            </fieldset>
+                <legend>1b</legend>
+                <fieldset>
+                    <!-- BSN nummer -->
+                    <label>burgerservicenummer overledene <input type="text" name="tentacles">
+                        <a
+                            href="https://www.rijksoverheid.nl/onderwerpen/privacy-en-persoonsgegevens/vraag-en-antwoord/wat-is-het-burgerservicenummer-bsn#:~:text=Burgerservicenummer%20opvragen&text=De%20Nederlandse%20identiteitskaart%20heeft%20het,nummer%20bestaat%20uit%209%20cijfers.">info
+                            over BSN
+                        </a>
+                    </label>
+                </fieldset>
 
-            <!-- 👻👻👻👻👻👻 -->
-            <!-- vraag 1b -->
-            <!-- 👻👻👻👻👻👻 -->
 
-            <br><br>
+                <fieldset>
+                    <!-- Overlijdensdatum -->
+                    <label>overlijdensdatum<input type="date" name="overlijdensdatum" max="2025-03-24">
+                    </label>
+                </fieldset>
 
-            <fieldset>
-                  <!-- radiobutton - partner? -->
-                <legend>Was de overledene getrouwd of had de overledene geregistreerd partner op het moment
-                    van overlijden?</legend>
+                <fieldset>
+                    <!-- radiobutton - partner? -->
+                    <legend>Was de overledene getrouwd of had de overledene geregistreerd partner op het moment
+                        van overlijden?</legend>
 
                     <label>
-                        <input type="radio" name="partner" />
+                        <input type="radio" name="partner">
                         nee
                         <small>Ga verder met vraag 1c</small>
                     </label>
 
                     <label>
-                        <input type="radio" name="partner"/>
+                        <input type="radio" name="partner">
                         ja
                     </label>
 
 
+                </fieldset>
+
+
+                <!-- 👻👻👻👻👻👻 -->
+                <!-- Vervolg 1b -->
+                <!-- 👻👻👻👻👻👻 -->
+                <!-- Als ja word beantwoord op vraag 1B-->
+                <fieldset>
+                    <fieldset>
+                        <!-- Partnet deel 2 -->
+                        <legend>Hadden de overledene en diens echtgenoot of geregistreerd partner
+                            huwelijkse partnerschaps-voorwaarden laten vastleggen in een notariële akte? </legend>
+
+                        <label>
+                            <input type="radio" id="partner-2" name="partner2">
+                            nee
+                        </label>
+
+                        <label>
+                            <input type="radio" name="partner2">
+                            ja
+                            <small>Stuur een kopie van de akte mee met de aangifte</small>
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <!-- Partnet deel 3 -->
+                        <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
+                        <label><input type="radio" name="partner3">nee</label>
+                        <label><input type="radio" name="partner3">ja</label>
+                    </fieldset>
+
+                    <!-- Partnet deel 4 -->
+                    <fieldset>
+                        <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+                        <label>
+                            <input type="date" name="overlijdensdatum" max="2025-03-24">
+                        </label>
+                    </fieldset>
+                </fieldset>
+
+                <!-- 👻👻👻👻👻👻 -->
+                <!-- Vraag 1c -->
+                <!-- 👻👻👻👻👻👻 -->
+                <fieldset>
+                    <legend>1c</legend>
+
+                    <fieldset>
+                        <!-- Overledene zijn/haar kinderen -->
+                        <legend>Had de overledene kinderen?</legend>
+                        <label><input type="radio" name="past-child">nee</label>
+                        <small>Ga verder met vraag 1d.</small>
+                        <label><input type="radio" name="past-child">ja</label>
+                    </fieldset>
+
+
+                    <fieldset>
+                        <legend>Is 1 van deze kinderen eerder overleden
+                            dan de overledene voor wie u nu aangifte doet?</legend>
+                        <label><input type="radio" name="past-child">nee</label>
+                        <small>Ga verder met vraag 1d.</small>
+                        <label><input type="radio" name="past-child">ja</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Had dit overleden kind zelf kinderen?</legend>
+                        <label><input type="radio" name="past-child">nee</label>
+                        <label><input type="radio" name="past-child">ja</label>
+                    </fieldset>
+                </fieldset>
+
+
+                <!-- 👻👻👻👻👻👻 -->
+                <!-- Vraag 1d -->
+                <!-- 👻👻👻👻👻👻 -->
+                <fieldset>
+                    <legend>1d</legend>
+
+                    <fieldset>
+                        <!-- testament -->
+                        <legend>Had de overledene een testament?</legend>
+                        <label><input type="radio" name="past-child">nee</label>
+                        <small>Ga verder met vraag 2.</small>
+                        <label><input type="radio" name="past-child">ja</label>
+                        <small>Vul de gegevens in van de notaris die het testament
+                            heeft opgemaakt en de datum van het testament.</small>
+                    </fieldset>
+
+
+                    <fieldset>
+                        <!-- gegevens van notaris nummer -->
+                        <label>Protocolnummer notaris 
+                            <input type="text" name="Protocolnummer">
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <!-- voorletter -->
+                        <label>Voorletter(s)<input type="text" name="voorl"></label>
+                        <!-- tussenvoegsel -->
+                        <label>tussenvoegsel<input type="text" name="tussenv"></label>
+                        <!-- achternaam -->
+                        <label>achternaam<input type="text" name="achtern"></label>
+                    </fieldset>
+
+                    <fieldset>
+                        <!-- Vestigingsplaats -->
+                        <label>Vestigingsplaats<input type="text" name="Vestigingsplaats"></label>
+            
+                        <!-- datum testament -->
+                        <label>Datum van het testament of van de laatste wijziging<input type="date" name="datum-testament-wijziging"></label>
+                    </fieldset>
+
+
+
+
+
+                </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </fieldset>
-
-            <br><br>
-
-           <!-- Als ja word beantwoord op vraag 1B-->
-            <fieldset>
-            <fieldset>
-             <!-- Partnet deel 2 -->
-              <legend>Hadden de overledene en diens echtgenoot of geregistreerd partner 
-                huwelijkse partnerschaps-voorwaarden laten vastleggen in een notariële akte? </legend>
-
-                    <label>
-                        <input type="radio" id="partner-2" name="partner2" />
-                        nee
-                    </label>
-
-                    <label>
-                        <input type="radio"name="partner2"/>
-                        ja
-                        <small>Stuur een kopie van de akte mee met de aangifte</small>
-                    </label>
-            </fieldset>
-
-            <br><br>
-
-            <fieldset>
-                    <!-- Partnet deel 3 -->
-                <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
-                <label><input type="radio" name="partner3"/>nee</label>
-                <label><input type="radio" name="partner3"/>ja</label>
-            </fieldset>
-
-            <br><br>
-
-                <!-- Partnet deel 4 -->
-            <fieldset>
-                <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
-                <label>
-                    <input type="date" name="overlijdensdatum" max="2025-03-24">
-                </label>
-            </fieldset>
-            </fieldset>
-
-
-
-
-
-
         </form>
-
     </main>
 </body>
 
