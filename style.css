@@ -18,14 +18,13 @@
     font-family: "Carto Gothic bold";
     font-weight: bold;
     src: url(../assets/CartoGothicStd-Bold.otf) format("opentype");
-  }
+}
 
 
-  @font-face {
+@font-face {
     font-family: "Carto Gothic";
     src: url(../assets/CartoGothicStd-Book.otf) format("opentype");
-  }
-
+}
 
 
 body {
@@ -35,104 +34,209 @@ body {
     /* ✨✨ Custom properties ✨✨ */
     /***************************/
 
-      /* Fonts */
-      --NS-Sans-Regular:"Carto Gothic", sans-serif;
-      --NS-Sans-Bold:"Carto Gothic bold";
+    /* Fonts */
+    --NS-Sans-Regular: "Carto Gothic", sans-serif;
+    --NS-Sans-Bold: "Carto Gothic bold";
 
-  
-      /* Font sizes web & mobile */
-      --h1-small: 1.5em;
-      --p-small: 2em;
-  
-      /* NS Colors */
-      --ns-yellow: #ffc917;
-      --ns-blue: #003082;
-      --ns-light-blue: #0063d3;
-      
-      --ns-white: #ffffff;
-      --ns-grey: #070721;
-      --ns-grey-10: #202037;
-      --ns-grey-20: #39394D;
-      --ns-grey-30: #515164;
-      --ns-grey-40: #6a6a7a;
-      --ns-grey-50: #838390;
-      --ns-grey-60: #9c9ca6;
-      --ns-grey-70: #b5b5bc;
-      --ns-grey-80: #cdcdd3;
-      --ns-grey-90: #e6e6e9;
-      --ns-grey-94: #f0f0f2;
-      
-      --ns-red-alert: #db0029;
-      --ns-green: #009a42;
-      --ns-ovchip: #ff0098;
-      --ns-ovorange: #ff7700;
-      
-      --ns-light-blue: #0079d3;
-      --ns-light-blue-2: #005ca0;
-      --ns-yellow-2: #ffb519;
-      
-      --ns-grey-alpha-60: #070721 (60%);
-      --ns-grey-alpha-15 : #070721 (15%);
-      --ns-grey-alpha-10 : #070721 (10%);
-
-     /* Grid */
-
-     --full-width: 100%;
-     --desktop-width: 1200px;
-     --phone-width: 280px;
-     --desktop-grid: 12;
-     --iphone-grid: 4;
-     --gap: 28px;
-     --margin: 14px;
+    --NS-Inter: "Inter", sans-serif;
 
 
+    /* Font sizes web & mobile */
+    --h1-small: 1.5em;
+    --p-small: 2em;
 
-   /* ✨✨ General ✨✨ */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* NS Colors */
+    --ns-yellow: #ffc917;
+    --ns-blue: #003082;
+    --ns-light-blue: #0063d3;
+
+    --ns-white: #ffffff;
+    --ns-grey: #070721;
+    --ns-grey-10: #202037;
+    --ns-grey-20: #39394D;
+    --ns-grey-30: #515164;
+    --ns-grey-40: #6a6a7a;
+    --ns-grey-50: #838390;
+    --ns-grey-60: #9c9ca6;
+    --ns-grey-70: #b5b5bc;
+    --ns-grey-80: #cdcdd3;
+    --ns-grey-90: #e6e6e9;
+    --ns-grey-94: #f0f0f2;
+
+    --ns-red-alert: #db0029;
+    --ns-green: #009a42;
+    --ns-ovchip: #ff0098;
+    --ns-ovorange: #ff7700;
+
+    --ns-light-blue-1: #0079d3;
+    --ns-light-blue-2: #005ca0;
+    --ns-light-blue-3: #ebf5ff;
+    --ns-yellow-2: #ffb519;
+
+    --ns-grey-alpha-60: #070721 (60%);
+    --ns-grey-alpha-15: #070721 (15%);
+    --ns-grey-alpha-10: #070721 (10%);
+
+    /* Grid */
+
+    --full-width: 100%;
+    --desktop-width: 1200px;
+    --phone-width: 280px;
+    --desktop-grid: 12;
+    --iphone-grid: 4;
+    --gap: 28px;
+    --margin: 14px;
+    --padding-left: 32px;
+    --padding-right: 32px;
+    --padding-top: 40px;
+    --padding-bottom: 40px;
+
+
+
+    /* ✨✨ General ✨✨ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-header{
+header {
     background-color: var(--ns-red-alert);
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-header p{
+header p {
     color: var(--ns-white);
-    font-family: var(--NS-Sans-Bold);
     margin: 7px;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
-    margin: var(--margin);
+    margin: 2px 14px 14px 14px;
     max-width: 280px;
 }
+
+article:nth-of-type(1) {
+    background-color: var(--ns-light-blue-3);
+    width: 100%;
+}
+
+article:nth-of-type(1), div:first-of-type{
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+article:nth-of-type(1) ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+article:nth-of-type(1) button {
+    color: var(--ns-blue);
+    background-color: var(--ns-yellow);
+    font-family: var(--NS-Sans-Bold);
+    font-size: 1.25em;
+
+    border-radius: 6px;
+    text-align: center;
+    border-color: transparent;
+    cursor: pointer;
+    padding: 8px 20px;
+    min-height: 48px;
+    min-width: 80px;
+}
+
+hr{
+    height: 4px;
+    width: 128px;
+    color: transparent;
+    background-color: var(--ns-yellow);
+    border-color: transparent;
+
+}
+
+h1,
+h2 {
+    font-family: var(--NS-Sans-Regular);
+}
+
+h1{
+    font-family: var(--NS-Sans-Bold);
+    color: var(--ns-blue);
+    font-size: 2.5rem;
+    letter-spacing: calc(-0.022em + 0.33px);
+    line-height: calc(1.07em + 6px) ;
+}
+
+h2{
+    font-family: var(--NS-Sans-Bold);
+    color: var(--ns-blue);
+    font-size: 2.1rem;
+    letter-spacing: calc(-0.022em + 0.33px);
+    line-height: calc(1.07em + 6px) ;
+}
+
+h3{
+    font-family: var( --NS-Inter);
+    font-weight: 500;
+}
+
+p{
+ font-family: var( --NS-Inter);
+ font-weight: 200;
+}
+
+div:first-of-type{
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+div:first-of-type section{
+    width: 100%;
+}
+
+div:first-of-type section:nth-of-type(1){
+    background-color: pink;
+}
+
+div:first-of-type section:nth-of-type(2){
+    background-color: lightblue;
+}
+
+
+
+
+
 
 
 /****************************/
 /* ✨✨      Media      ✨✨ */
 /***************************/
-@media (min-width: 300px){
-    main{
+@media (min-width: 300px) {
+    main {
         max-width: 1200px;
         margin: var(--margin);
     }
 }
 
-@media (min-width: 600px){
-    main{
+@media (min-width: 600px) {
+    main {
         max-width: 1200px;
         margin: var(--margin);
     }
 }
 
-@media (min-width: 900px){
-    main{
+@media (min-width: 900px) {
+    main {
         max-width: 1200px;
         margin: var(--margin);
     }
@@ -169,10 +273,7 @@ main{
     padding: .625rem 2rem .625rem 4.1875rem; 
     /* https://www.ns.nl/platform/components/notification-bar.html bron voor modifier padding waardes */
 
-    /* text-align: center; */
+/* text-align: center; */
 /*  */
-    /* custom properties aanmaken voor de kleuren, margins, enzv */
-    /* General styling maken */
-    
-
-
+/* custom properties aanmaken voor de kleuren, margins, enzv */
+/* General styling maken */
