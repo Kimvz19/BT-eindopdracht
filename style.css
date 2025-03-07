@@ -123,7 +123,8 @@ article:nth-of-type(1) {
     width: 100%;
 }
 
-article:nth-of-type(1), div:first-of-type{
+article:nth-of-type(1),
+div:first-of-type {
     padding-left: var(--padding-left);
     padding-right: var(--padding-right);
     padding-bottom: 40px;
@@ -131,9 +132,9 @@ article:nth-of-type(1), div:first-of-type{
 }
 
 article:nth-of-type(1) ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 
@@ -152,7 +153,7 @@ article:nth-of-type(1) button {
     min-width: 80px;
 }
 
-hr{
+hr {
     height: 4px;
     width: 128px;
     color: transparent;
@@ -166,49 +167,50 @@ h2 {
     font-family: var(--NS-Sans-Regular);
 }
 
-h1{
+h1 {
     font-family: var(--NS-Sans-Bold);
     color: var(--ns-blue);
     font-size: 2.5rem;
     letter-spacing: calc(-0.022em + 0.33px);
-    line-height: calc(1.07em + 6px) ;
+    line-height: calc(1.07em + 6px);
 }
 
-h2{
+h2 {
     font-family: var(--NS-Sans-Bold);
     color: var(--ns-blue);
     font-size: 2.1rem;
     letter-spacing: calc(-0.022em + 0.33px);
-    line-height: calc(1.07em + 6px) ;
+    line-height: calc(1.07em + 6px);
 }
 
-h3, summary {
-    font-family: var( --NS-Inter);
+h3,
+summary {
+    font-family: var(--NS-Inter);
     font-weight: 500;
     font-size: 1.15rem;
 }
 
-p{
- font-family: var( --NS-Inter);
- font-weight: 200;
+p {
+    font-family: var(--NS-Inter);
+    font-weight: 200;
 }
 
-div:first-of-type{
+div:first-of-type {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 28px;
 }
 
-div:first-of-type section{
+div:first-of-type section {
     width: 100%;
 }
 
-div:first-of-type section:nth-of-type(1){
+div:first-of-type section:nth-of-type(1) {
     background-color: pink;
 }
 
-div:first-of-type section:nth-of-type(2){
+div:first-of-type section:nth-of-type(2) {
     background-color: lightblue;
 }
 
@@ -249,23 +251,23 @@ div:first-of-type section:nth-of-type(2){
 /****************************/
 /* ✨✨      FORM      ✨✨ */
 /***************************/
-.first{
+.first {
     padding: 40px;
 }
 
-fieldset{
+fieldset {
     padding: 5px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-label input{
+label input {
     display: flex;
     flex-direction: column;
 }
 
-legend{
+legend {
     padding: 5px;
 }
 
