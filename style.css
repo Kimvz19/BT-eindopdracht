@@ -136,9 +136,9 @@ article:nth-of-type(1) ul {
     gap: 5px;
 }
 
-article:nth-of-type(1) ul li{
-padding-bottom: 6px;
-padding-top: 8px;
+article:nth-of-type(1) ul li {
+    padding-bottom: 6px;
+    padding-top: 8px;
 }
 
 
@@ -194,13 +194,23 @@ h3,
 summary {
     font-family: var(--NS-Inter);
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: 1rem;
+    color: var(--ns-blue);
 }
 
 p {
     font-family: var(--NS-Inter);
     font-weight: 200;
+    font-size: 0.95rem;
 }
+
+
+a {
+    color: var(--ns-blue);
+    font-family: var(--NS-Sans-Bold);
+}
+
+
 
 div:first-of-type {
     display: flex;
@@ -213,11 +223,20 @@ div:first-of-type section {
     width: 100%;
 }
 
-div:first-of-type section:nth-of-type(1) {
-    background-color: var( --ns-red-alert);
+/* styling section 1 */
+section:nth-of-type(1) {
+    background-color: var(--ns-white);
 }
 
-div:first-of-type section:nth-of-type(2) {
+section:nth-of-type(1) li:nth-child(even){
+margin-top: 20px;
+}
+
+
+
+
+
+section:nth-of-type(2) {
     background-color: lightblue;
 }
 
@@ -291,12 +310,12 @@ fieldset:nth-of-type(1) label:nth-of-type(2) input {
 
 /* ✨✨  validation for form  ✨✨ */
 input:user-invalid {
-	background: var(--ns-red-alert);
-	color: white;
+    background: var(--ns-red-alert);
+    color: white;
 }
 
 input:user-valid {
-	background: var( --ns-green);
+    background: var(--ns-green);
 }
 
 
@@ -322,14 +341,14 @@ input:user-valid {
 
 
 
-    /* div:first-of-type{
+/* div:first-of-type{
     background-color: #db0029;  
     color: white;
     font-family: sans-serif;
     padding: .625rem 2rem .625rem 4.1875rem; 
     /* https://www.ns.nl/platform/components/notification-bar.html bron voor modifier padding waardes */
 
-    /* text-align: center; */
-    /*  */
-    /* custom properties aanmaken voor de kleuren, margins, enzv */
-    /* General styling maken */
+/* text-align: center; */
+/*  */
+/* custom properties aanmaken voor de kleuren, margins, enzv */
+/* General styling maken */
