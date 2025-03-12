@@ -133,7 +133,12 @@ div:first-of-type {
 article:nth-of-type(1) ul {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+}
+
+article:nth-of-type(1) ul li{
+padding-bottom: 6px;
+padding-top: 8px;
 }
 
 
@@ -151,10 +156,12 @@ article:nth-of-type(1) a {
     padding: 15px 20px;
     min-height: 48px;
     min-width: 80px;
+
 }
 
 hr {
     height: 4px;
+    padding: 2px;
     width: 128px;
     color: transparent;
     background-color: var(--ns-yellow);
