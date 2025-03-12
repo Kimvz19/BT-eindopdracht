@@ -17,14 +17,13 @@
 @font-face {
     font-family: "Carto Gothic bold";
     font-weight: bold;
-    src: url("/assets/CartoGothicStd-Bold.otf") format("opentype");
+    src: url("assets/CartoGothicStd-Bold.otf") format("opentype");
 }
 
 @font-face {
     font-family: "Carto Gothic";
-    src: url("/assets/CartoGothicStd-Book.otf") format("opentype");
+    src: url("assets/CartoGothicStd-Book.otf") format("opentype");
 }
-
 
 
 body {
