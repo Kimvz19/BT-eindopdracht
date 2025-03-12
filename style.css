@@ -17,14 +17,14 @@
 @font-face {
     font-family: "Carto Gothic bold";
     font-weight: bold;
-    src: url(../assets/CartoGothicStd-Bold.otf) format("opentype");
+    src: url("/assets/CartoGothicStd-Bold.otf") format("opentype");
 }
-
 
 @font-face {
     font-family: "Carto Gothic";
-    src: url(../assets/CartoGothicStd-Book.otf) format("opentype");
+    src: url("/assets/CartoGothicStd-Book.otf") format("opentype");
 }
+
 
 
 body {
@@ -270,6 +270,19 @@ label input {
 legend {
     padding: 5px;
 }
+
+/* input met voorletters > maakt hoofdletters */
+fieldset:nth-of-type(1) label:nth-of-type(1) input {
+    text-transform: uppercase;
+}
+
+/* input met tussenletters > maakt geen hoofdletters */
+fieldset:nth-of-type(1) label:nth-of-type(2) input {
+    text-transform: lowercase;
+}
+
+
+
 
 
 

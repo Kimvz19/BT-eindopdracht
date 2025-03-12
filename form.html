@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <header>
+        <p>Let op: Dit is een schoolproject!</p>
+    </header>
     <main>
 
         <form>
@@ -20,11 +23,15 @@
             <fieldset>
                 <legend>1a</legend>
                 <!-- voorletter -->
-                <label>Voorletter(s)<input type="text" name="voorl"></label>
+                <label>Voorletter(s)
+                    <input type="text" name="voorl" minlength="1" maxlength="8" required>
+                </label>
                 <!-- tussenvoegsel -->
-                <label>tussenvoegsel<input type="text" name="tussenv"></label>
+                <label>tussenvoegsel
+                    <input type="text" name="tussenv" minlength="1" maxlength="11">
+                </label>
                 <!-- achternaam -->
-                <label>achternaam<input type="text" name="achtern"></label>
+                <label>achternaam<input type="text" name="achtern" required></label>
             </fieldset>
 
             <fieldset>
@@ -36,18 +43,20 @@
                 <legend>1b</legend>
                 <fieldset>
                     <!-- BSN nummer -->
-                    <label>burgerservicenummer overledene <input type="text" name="tentacles">
+                    <label>burgerservicenummer overledene <input type="text" name="tentacles" required>
                         <a
                             href="https://www.rijksoverheid.nl/onderwerpen/privacy-en-persoonsgegevens/vraag-en-antwoord/wat-is-het-burgerservicenummer-bsn#:~:text=Burgerservicenummer%20opvragen&text=De%20Nederlandse%20identiteitskaart%20heeft%20het,nummer%20bestaat%20uit%209%20cijfers.">info
                             over BSN
                         </a>
+
                     </label>
                 </fieldset>
 
 
                 <fieldset>
                     <!-- Overlijdensdatum -->
-                    <label>overlijdensdatum<input type="date" name="overlijdensdatum" max="2025-03-24">
+                    <!-- datum gezet tot max 21 maart omdat de deadline is 20 - 21 -->
+                    <label>overlijdensdatum<input type="date" name="overlijdensdatum" max="2025-03-21" required>
                     </label>
                 </fieldset>
 
