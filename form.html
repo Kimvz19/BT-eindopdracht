@@ -14,7 +14,7 @@
     </header>
     <main>
 
-        <form>
+        <form data-form-topic="myFormData">
 
             <!-- 👻👻👻👻👻👻 -->
             <!-- vraag 1a -->
@@ -24,14 +24,15 @@
                 <legend>1a</legend>
                 <!-- voorletter -->
                 <label>Voorletter(s)
-                    <input type="text" name="voorl" minlength="1" maxlength="8" required>
+                    <input type="text" id="voorl" name="voorl" minlength="1" maxlength="8" required>
                 </label>
                 <!-- tussenvoegsel -->
                 <label>Tussenvoegsel
-                    <input type="text" name="tussenv" minlength="1" maxlength="11">
+                    <input type="text" name="tussenv" minlength="1" maxlength="11" >
                 </label>
                 <!-- achternaam -->
-                <label>Achternaam<input class="achternaam" type="text" name="achtern" required></label>
+                <label>Achternaam<input type="text" name="achtern" pattern="[A-Za-z]+" required></label>
+                <button type="submit">Verstuur</button>
             </fieldset>
 
             <fieldset>
@@ -43,7 +44,7 @@
                 <legend>1b</legend>
                 <fieldset>
                     <!-- BSN nummer -->
-                    <label>burgerservicenummer overledene <input type="text" name="tentacles" required>
+                    <label>burgerservicenummer overledene <input type="text" name="tentacles" >
                         <a
                             href="https://www.rijksoverheid.nl/onderwerpen/privacy-en-persoonsgegevens/vraag-en-antwoord/wat-is-het-burgerservicenummer-bsn#:~:text=Burgerservicenummer%20opvragen&text=De%20Nederlandse%20identiteitskaart%20heeft%20het,nummer%20bestaat%20uit%209%20cijfers.">info
                             over BSN
@@ -56,7 +57,7 @@
                 <fieldset>
                     <!-- Overlijdensdatum -->
                     <!-- datum gezet tot max 21 maart omdat de deadline is 20 - 21 -->
-                    <label>overlijdensdatum<input type="date" name="overlijdensdatum" max="2025-03-21" required>
+                    <label>overlijdensdatum<input type="date" name="overlijdensdatum" max="2025-03-21" >
                     </label>
                 </fieldset>
 
