@@ -97,6 +97,7 @@ header {
     display: flex;
     justify-content: center;
 }
+
 /* ❌ melding bovenaan de pagina ❌ */
 header p {
     color: var(--ns-white);
@@ -117,14 +118,15 @@ hr {
 h1,
 h2 {
     font-family: var(--NS-Sans-Bold);
-        /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
-        font-size: clamp(1rem, 0.5385rem + 1.9692vw, 3rem);
-        color: var(--ns-blue);
+    /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
+    font-size: clamp(1rem, 0.5385rem + 1.9692vw, 3rem);
+    color: var(--ns-blue);
 }
 
-h2{
+h2 {
     /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
-    font-size: clamp(1rem, 0.8269rem + 0.7385vw, 1.75rem);}
+    font-size: clamp(1rem, 0.8269rem + 0.7385vw, 1.75rem);
+}
 
 h3,
 summary {
@@ -152,17 +154,18 @@ a {
 /* ✨✨  STYLING INDEX   ✨✨ */
 /***************************/
 
-main{
+main {
     /* Bron clamp generator : https://clamp-generator.netlify.app/  */
     margin: calc(clamp(0.875rem, 0.246vw + 0.817rem, 1.125rem));
-    max-width: fit-content;
+    gap: 20px;
+    /* max-width: fit-content; */
 }
 
-article:nth-of-type(1){
+article:nth-of-type(1) {
     --padding-top: 55px;
     --padding-left: 45px;
 
-    background-color:  var(--ns-light-blue-3);
+    background-color: var(--ns-light-blue-3);
     padding-left: var(--padding-left);
     padding-right: var(--padding-right);
     padding-bottom: var(--padding-bottom);
@@ -170,12 +173,12 @@ article:nth-of-type(1){
 
 }
 
-article:nth-of-type(1) li{
+article:nth-of-type(1) li {
     margin-top: 5px;
 }
 
-article:nth-of-type(1) img{
-   width: 100%;
+article:nth-of-type(1) img {
+    width: 100%;
 }
 
 /* button in de article */
@@ -193,10 +196,78 @@ article:nth-of-type(1) a {
 }
 
 article:nth-of-type(1) li:has(a),
-article:nth-of-type(1) li hr
-{
+article:nth-of-type(1) li hr {
     margin-top: 25px;
 }
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+div>section {
+    width: 100%;
+
+    &:nth-of-type(1) {
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+        padding-bottom: var(--padding-bottom);
+        padding-top: var(--padding-top);
+    }
+
+    &:nth-of-type(2) {
+        padding-left: var(--padding-left);
+        padding-right: var(--padding-right);
+        padding-bottom: var(--padding-bottom);
+        padding-top: var(--padding-top);
+    }
+}
+
+section:nth-of-type(1) li:nth-child(even) {
+    margin-top: 20px;
+}
+
+section:nth-of-type(2) details {
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    &:nth-of-type(1) {
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+    }
+}
+
+section:nth-of-type(1) li:nth-child(odd) {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 1px;
+}
+
+summary::after {
+    content: "+";
+    transition: transform 0.2s ease-in-out;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+
+
+
+
+
 
 
 
@@ -205,7 +276,28 @@ article:nth-of-type(1) li hr
 /* ✨✨      Media      ✨✨ */
 /***************************/
 
+@media (min-width: 750px) {
+
+    div {
+        flex-direction: row;
+    }
+
+    div>section {
+        max-width: 50%;
+    }
+
+
+}
+
 @media (min-width: 900px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
     article:nth-of-type(1) {
         --padding-top: 80px;
         --padding-left: 80px;
@@ -213,13 +305,18 @@ article:nth-of-type(1) li hr
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center; 
+        align-items: center;
+        max-width: 1200px;
     }
 
     article:nth-of-type(1) ul {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
+    }
+
+    div {
+        max-width: 1200px;
     }
 }
 
