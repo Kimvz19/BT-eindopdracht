@@ -11,106 +11,79 @@ achternaamInput.addEventListener('input', function() {
 
 
 //opslaan form
+// Function to save form data to localStorage
+function saveFormData() {
+    console.log('test')
+    // Get all input elements from the acquirer-1 fieldset
+    const inputs = document.querySelectorAll('form fieldset label input');
 
-console.log("Script gestart");
+    // Create an object to store the form data
+    const formData = {};
 
-// Verkrijg alle input-elementen van het formulier
-const inputs = document.getElementsByTagName("input");
-const form = document.querySelector("form");
-let savedData = {}; // Object om formuliergegevens op te slaan
-
-// EventListener voor wanneer de DOM volledig geladen is
-document.addEventListener("DOMContentLoaded", () => {
-    if (window.localStorage) {
-        console.log("localStorage is beschikbaar.");
-
-        // Controleer of form en data-form-topic aanwezig zijn
-        if (!form || !form.dataset.formTopic) {
-            console.log("Formulier of data-form-topic niet gevonden.");
-            return;
-        }
-
-        // Verkrijg de form-topic uit data-attribute
-        let formTopic = form.dataset.formTopic;
-        console.log(`Form-topic: ${formTopic}`);
-
-        // Verkrijg opgeslagen gegevens uit localStorage
-        let getFormTopic = localStorage.getItem(formTopic);
-        console.log("Opgeslagen gegevens:", getFormTopic);
-
-        if (getFormTopic) {
-            savedData = JSON.parse(getFormTopic); // Zet de opgeslagen gegevens om naar object
-            fillFormFields(savedData); // Vul de formulier velden in met de opgeslagen gegevens
-        }
-    } else {
-        console.log("localStorage is niet beschikbaar.");
-    }
-});
-
-// Functie om formulier velden in te vullen
-function fillFormFields(data) {
-    if (!data) 
-    return; 
-    //als de data niet beschikbaar is
-
-    for (const key in data) {
-        const value = data[key];
-        const field = document.querySelector(`[name=${key}]`);
-        if (field) {
-            console.log(`Vullen veld: ${key} met waarde: ${value}`);
-            switch (field.type) {
-                case "radio":
-                    const radioButton = document.querySelector(`input[name='${key}'][value='${value}']`);
-                    if (radioButton) radioButton.checked = true;
-                    break;
-                case "checkbox":
-                    field.checked = value === "on";
-                    break;
-                case "file":
-                    break;
-                default:
-                    field.value = value;
+    // Loop through each input and save its value
+    inputs.forEach(input => {
+        // For radio buttons, only save if checked
+        if (input.type === 'radio') {
+            if (input.checked) {
+                formData[input.name] = input.id;
             }
         } else {
-            console.log(`Veld ${key} niet gevonden in het formulier.`);
+            // For text inputs, save the value
+            formData[input.name] = input.value;
+            console.log(formData);
+
         }
-    }
-}
-
-// Functie om formuliergegevens op te slaan in localStorage
-function saveFormDataToLocalStorage(e) {
-    const formData = new FormData(form);
-    formData.forEach((value, key) => {
-        console.log(`Opslaan: ${key} met waarde: ${value}`);  // Log de gegevens
-        savedData[key] = value;  // Sla de data op in het object
     });
 
-    // Controleer de inhoud van savedData
-    console.log("Gegevens opgeslagen in savedData:", savedData);
-
-    // Sla de gegevens op in localStorage
-    const formTopic = form.dataset.formTopic;
-    if (formTopic) {
-        window.localStorage.setItem(formTopic, JSON.stringify(savedData));
-        console.log("Gegevens opgeslagen in localStorage.");
-    } else {
-        console.log("Geen form-topic gevonden om op te slaan.");
-    }
+    // Save the form data to localStorage
+    localStorage.setItem('formData', JSON.stringify(formData));
 }
 
-// Voeg eventlisteners toe voor het opslaan van gegevens
-Array.prototype.forEach.call(inputs, function(input) {
-    input.addEventListener("blur", function(e) {
-        console.log(`Blur event op: ${input.name}`);
-        saveFormDataToLocalStorage(e);
-    });
-});
+// Function to load form data from localStorage
+function loadFormData() {
+    // Get the saved form data from localStorage
+    const savedData = localStorage.getItem('formData');
 
-// Voeg een eventlistener toe voor het versturen van het formulier
-if (form) {
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();  // Voorkom standaard formulier versturen
-        console.log("Formulier verzonden, opslaan van gegevens...");
-        saveFormDataToLocalStorage(e);
+    // If there's no saved data, exit the function
+    if (!savedData) return;
+
+    // Parse the saved data
+    const formData = JSON.parse(savedData);
+
+    // Get all input elements from the acquirer-1 fieldset
+    const inputs = document.querySelectorAll('form fieldset label input');
+
+    // Loop through each input and set its value from the saved data
+    inputs.forEach(input => {
+        if (input.type === 'radio') {
+            // For radio buttons, check if the ID matches the saved value
+            if (formData[input.name] === input.id) {
+                input.checked = true;
+            }
+        } else if (input.name in formData) {
+            // For text inputs, set the value
+            input.value = formData[input.name];
+        }
     });
 }
+
+// Function to attach event listeners to all form inputs
+function setupFormPersistence() {
+    // Get all input elements from the acquirer-1 fieldset
+    const inputs = document.querySelectorAll('form fieldset label input');
+
+    // Add change event listener to each input
+    inputs.forEach(input => {
+        input.addEventListener('input', saveFormData);
+        // For radio buttons, also listen for the change event
+        if (input.type === 'radio') {
+            input.addEventListener('change', saveFormData);
+        }
+    });
+
+    // Load saved form data when the page loads
+    loadFormData();
+}
+
+// Initialize form persistence when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setupFormPersistence);
