@@ -12,6 +12,7 @@ achternaamInput.addEventListener('input', function() {
 
 //opslaan form
 // Function to save form data to localStorage
+//Bron voor local storage : Chris Donker
 function saveFormData() {
     console.log('test')
     // Get all input elements from the acquirer-1 fieldset

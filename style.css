@@ -39,11 +39,6 @@ body {
 
     --NS-Inter: "Inter", sans-serif;
 
-
-    /* Font sizes web & mobile */
-    --h1-small: 1.5em;
-    --p-small: 2em;
-
     /* NS Colors */
     --ns-yellow: #ffc917;
     --ns-blue: #003082;
@@ -90,13 +85,11 @@ body {
     --padding-top: 40px;
     --padding-bottom: 40px;
 
-
-
-    /* ✨✨ General ✨✨ */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
+
+/****************************/
+/* ✨✨      Basics      ✨✨ */
+/***************************/
 
 header {
     background-color: var(--ns-red-alert);
@@ -104,61 +97,13 @@ header {
     display: flex;
     justify-content: center;
 }
-
+/* ❌ melding bovenaan de pagina ❌ */
 header p {
     color: var(--ns-white);
     margin: 7px;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    margin: 2px 14px 14px 14px;
-    max-width: 280px;
-}
-
-article:nth-of-type(1) {
-    background-color: var(--ns-light-blue-3);
-    width: 100%;
-}
-
-article:nth-of-type(1),
-div:first-of-type {
-    padding-left: var(--padding-left);
-    padding-right: var(--padding-right);
-    padding-bottom: 40px;
-    padding-top: 40px;
-}
-
-article:nth-of-type(1) ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-article:nth-of-type(1) ul li {
-    padding-bottom: 6px;
-    padding-top: 8px;
-}
-
-
-article:nth-of-type(1) a {
-    color: var(--ns-blue);
-    background-color: var(--ns-yellow);
-    font-family: var(--NS-Sans-Bold);
-    font-size: 1.25em;
-
-    border-radius: 6px;
-    text-align: center;
-    text-decoration: none;
-    border-color: transparent;
-    cursor: pointer;
-    padding: 15px 20px;
-    min-height: 48px;
-    min-width: 80px;
-
-}
-
+/* 📈 decoratieve lijn 📈*/
 hr {
     height: 4px;
     padding: 2px;
@@ -166,44 +111,34 @@ hr {
     color: transparent;
     background-color: var(--ns-yellow);
     border-color: transparent;
-
 }
 
+/* 🍀 Headings 🍀*/
 h1,
 h2 {
-    font-family: var(--NS-Sans-Regular);
+    font-family: var(--NS-Sans-Bold);
+        /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
+        font-size: clamp(1rem, 0.5385rem + 1.9692vw, 3rem);
+        color: var(--ns-blue);
 }
 
-h1 {
-    font-family: var(--NS-Sans-Bold);
-    color: var(--ns-blue);
-    font-size: 2.5rem;
-    letter-spacing: calc(-0.022em + 0.33px);
-    line-height: calc(1.07em + 6px);
-}
-
-h2 {
-    font-family: var(--NS-Sans-Bold);
-    color: var(--ns-blue);
-    font-size: 2.1rem;
-    letter-spacing: calc(-0.022em + 0.33px);
-    line-height: calc(1.07em + 6px);
-}
+h2{
+    /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
+    font-size: clamp(1rem, 0.8269rem + 0.7385vw, 1.75rem);}
 
 h3,
 summary {
     font-family: var(--NS-Inter);
     font-weight: 500;
-    font-size: 1rem;
     color: var(--ns-blue);
+    font-size: clamp(0.875rem, 0.7596rem + 0.4923vw, 1.375rem);
 }
 
 p {
     font-family: var(--NS-Inter);
     font-weight: 200;
-    font-size: 0.95rem;
-}
-
+    /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
+    font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, 1.25rem);}
 
 a {
     color: var(--ns-blue);
@@ -211,36 +146,34 @@ a {
 }
 
 
+/****************************/
+/* ✨✨  STYLING INDEX   ✨✨ */
+/***************************/
 
-div:first-of-type {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 28px;
+main{
+    /* Bron clamp generator : https://clamp-generator.netlify.app/  */
+    margin: calc(clamp(0.875rem, 0.246vw + 0.817rem, 1.125rem));
+    max-width: fit-content;
 }
 
-div:first-of-type section {
-    width: 100%;
+article:nth-of-type(1){
+    background-color:  var(--ns-light-blue-3);
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
-/* styling section 1 */
-section:nth-of-type(1) {
-    background-color: var(--ns-white);
+article:nth-of-type(1) img{
+   width: 100%;
 }
 
-section:nth-of-type(1) li:nth-child(even){
-margin-top: 20px;
+/* button in de article */
+article:nth-of-type(1) a {
+    color: var(--ns-blue);
+    background-color: var(--ns-yellow);
+    font-family: var(--NS-Sans-Bold);
 }
-
-
-
-
-
-section:nth-of-type(2) {
-    background-color: lightblue;
-}
-
-
 
 
 
@@ -249,28 +182,6 @@ section:nth-of-type(2) {
 /****************************/
 /* ✨✨      Media      ✨✨ */
 /***************************/
-@media (min-width: 300px) {
-    main {
-        max-width: 1200px;
-        margin: var(--margin);
-    }
-}
-
-@media (min-width: 600px) {
-    main {
-        max-width: 1200px;
-        margin: var(--margin);
-    }
-}
-
-@media (min-width: 900px) {
-    main {
-        max-width: 1200px;
-        margin: var(--margin);
-    }
-}
-
-
 
 
 
