@@ -90,6 +90,7 @@ body {
 /* ✨✨      Basics     ✨✨ */
 /***************************/
 
+
 header {
     background-color: var(--ns-red-alert);
     width: 100%;
@@ -101,8 +102,9 @@ header {
 
 header p {
     color: var(--ns-white);
-    margin: 10px  7px  7px  7px;
+    margin: 10px 7px 7px 7px;
 }
+
 /* 📈 decoratieve lijn 📈*/
 hr {
     height: 4px;
@@ -143,7 +145,8 @@ p {
     font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, 1rem);
 }
 
-a, b {
+a,
+b {
     color: var(--ns-blue);
     font-family: var(--NS-Sans-Bold);
     font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, .9rem);
@@ -261,24 +264,15 @@ details[open] summary::after {
     content: "−";
 }
 
-
-
 /*********************************/
 /* ✨✨  Support van :has()   ✨✨ */
 /*********************************/
 
 @supports not (selector(:has(*))) {
-    article:nth-of-type(1) li a  {
+    article:nth-of-type(1) li a {
         margin-top: 25px;
     }
 }
-
-
-
-
-
-
-
 
 
 /****************************/
@@ -306,7 +300,6 @@ details[open] summary::after {
         align-items: center;
     }
 
-
     article:nth-of-type(1) {
         --padding-top: 80px;
         --padding-left: 80px;
@@ -333,25 +326,182 @@ details[open] summary::after {
 /****************************/
 /* ✨✨      FORM      ✨✨ */
 /***************************/
-.first {
-    padding: 40px;
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    max-width: 750px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--ns-grey-90);
+    transition: 0.3s ease-in-out;
 }
 
 fieldset {
-    padding: 5px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #dde8f0;
 }
 
-label input {
+fieldset:has(input[type="radio"]) {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #dde8f0;
+}
+
+fieldset:has(input[type="radio"]) p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+form > fieldset:nth-of-type(3),
+form > fieldset:nth-of-type(4) {
+    background-color: var(--ns-yellow);
+    border: .1em var(--ns-blue) solid;
+}
+
+form > fieldset:nth-of-type(3) > fieldset,
+form > fieldset:nth-of-type(4) > fieldset {
+    background-color: var(--ns-white);
+}
+
+label input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #004466;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+label input[type="radio"]:checked {
+    background-color: var(--ns-blue);
+    border: 6px solid white;
+    box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+label {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+    color: #004466;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 8px;
+    transition: color 0.2s ease-in-out;
+}
+
+label:hover input[type="radio"] {
+    border-color: var(--ns-yellow);
+}
+
+label:has(input[type="radio"]){
+    display: flex;
+    flex-direction: row;
+}
+
+small {
+    font-size: 0.9rem;
+    color: var(--ns-grey-40);
+    margin-left: 26px;
+}
+
+form > fieldset:nth-of-type(1) {
+    color: #ffffff;
+    background-color: var(--ns-yellow);
+    border: .1em var(--ns-blue) solid;
+}
+
+form > fieldset:nth-of-type(1) > fieldset {
+    background-color: var(--ns-white);
+}
+
+form > fieldset:nth-of-type(2) {
+    background-color: var(--ns-yellow);
+    border: .1em var(--ns-blue) solid;
+}
+
+form > fieldset:nth-of-type(2) > fieldset {
+    background-color: var(--ns-white);
 }
 
 legend {
-    padding: 5px;
+    font-family: var(--NS-Inter);
+    color: var(--ns-white);
+    font-weight: 500;
+    background-color: var(--ns-blue);
+    padding: 12px 16px;
+    margin-left: 15px;
+    border-radius: 6px;
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
+
+label {
+    font-family: var(--NS-Sans-Bold);
+    color: var(--ns-blue);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+label input {
+    border-radius: 5px;
+    border: 2px solid #aac4d6;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+@media (min-width: 700px) {
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    fieldset {
+        padding: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    form {
+        max-width: 900px;
+    }
+}
+
+
+
+
+
+
+
+
 
 /* input met voorletters > maakt hoofdletters */
 fieldset:nth-of-type(1) label:nth-of-type(1) input {
@@ -363,7 +513,6 @@ fieldset:nth-of-type(1) label:nth-of-type(2) input {
     text-transform: lowercase;
 }
 
-
 /* ✨✨  validation for form  ✨✨ */
 input:user-invalid {
     background: var(--ns-red-alert);
@@ -371,7 +520,7 @@ input:user-invalid {
 }
 
 input:user-valid {
-    background: var(--ns-green);
+   border: .2em var(--ns-green) solid;
 }
 
 
