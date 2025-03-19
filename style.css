@@ -28,10 +28,9 @@
 
 body {
 
-
     /****************************/
-    /* ✨✨ Custom properties ✨✨ */
-    /***************************/
+    /*✨✨ Custom properties ✨✨*/
+    /****************************/
 
     /* Fonts */
     --NS-Sans-Regular: "Carto Gothic", sans-serif;
@@ -65,6 +64,8 @@ body {
     --ns-light-blue-1: #0079d3;
     --ns-light-blue-2: #005ca0;
     --ns-light-blue-3: #ebf5ff;
+    /* kleur van de tekst bron : https://www.ns.nl/klantenservice/betalen/ovpay.html */
+    --ns-light-blue-4: rgb(0, 99, 211);
     --ns-yellow-2: #ffb519;
 
     --ns-grey-alpha-60: #070721 (60%);
@@ -72,7 +73,6 @@ body {
     --ns-grey-alpha-10: #070721 (10%);
 
     /* Grid */
-
     --full-width: 100%;
     --desktop-width: 1200px;
     --phone-width: 280px;
@@ -84,11 +84,10 @@ body {
     --padding-right: 32px;
     --padding-top: 40px;
     --padding-bottom: 40px;
-
 }
 
 /****************************/
-/* ✨✨      Basics      ✨✨ */
+/* ✨✨      Basics     ✨✨ */
 /***************************/
 
 header {
@@ -99,11 +98,11 @@ header {
 }
 
 /* ❌ melding bovenaan de pagina ❌ */
+
 header p {
     color: var(--ns-white);
-    margin: 7px;
+    margin: 10px  7px  7px  7px;
 }
-
 /* 📈 decoratieve lijn 📈*/
 hr {
     height: 4px;
@@ -119,39 +118,40 @@ h1,
 h2 {
     font-family: var(--NS-Sans-Bold);
     /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
-    font-size: clamp(1rem, 0.5385rem + 1.9692vw, 3rem);
+    font-size: clamp(1rem, 0.5385rem + 1.9692vw, 2.5rem);
     color: var(--ns-blue);
 }
 
 h2 {
     /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
-    font-size: clamp(1rem, 0.8269rem + 0.7385vw, 1.75rem);
+    font-size: clamp(1rem, 0.8269rem + 0.7385vw, 1.4rem);
 }
 
 h3,
 summary {
     font-family: var(--NS-Inter);
-    font-weight: 500;
-    color: var(--ns-blue);
-    font-size: clamp(0.875rem, 0.7596rem + 0.4923vw, 1.375rem);
+    color: var(--ns-light-blue-4);
+    font-weight: 400;
+    font-size: clamp(0.875rem, 0.7596rem + 0.4923vw, 1.2rem);
 }
+
 
 p {
     font-family: var(--NS-Inter);
     font-weight: 200;
     /* bron clamp generator font : https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjM3NXB4IiwibWF4V2lkdGgiOiIyMDAwcHgiLCJtaW5Gb250U2l6ZSI6IjE2cHgiLCJtYXhGb250U2l6ZSI6IjQ4cHgifQ%3D%3D */
-    font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, 1.25rem);
+    font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, 1rem);
 }
 
-a {
+a, b {
     color: var(--ns-blue);
     font-family: var(--NS-Sans-Bold);
-    font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, 1.25rem);
+    font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, .9rem);
 }
 
 
 /****************************/
-/* ✨✨  STYLING INDEX   ✨✨ */
+/* ✨✨STYLING INDEX  ✨✨ */
 /***************************/
 
 main {
@@ -224,7 +224,7 @@ div>section {
 }
 
 section:nth-of-type(1) li:nth-child(even) {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 section:nth-of-type(2) details {
@@ -245,8 +245,6 @@ section:nth-of-type(1) li:nth-child(odd) {
     margin-bottom: 10px;
 
 }
-
-
 
 summary {
     display: flex;
