@@ -120,11 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-
 let achternaamInput = document.querySelector('input[name="achtern"]');
 
 achternaamInput.addEventListener('input', function() {

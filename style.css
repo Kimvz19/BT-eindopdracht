@@ -488,14 +488,44 @@ label span {
   
 }
 
-/* #my-dialog {
+#my-dialog {
+    margin: auto;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+#my-dialog p{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: auto;
-    padding: auto;
-} */
+    max-width: 500px;
+    width: 100%;
+}
 
+#my-dialog button{
+   background-color: var(--ns-blue);
+   border-radius: 5px;
+   padding: 10px;
+   color:white;
+}
+
+button[commandfor="my-dialog"] {
+    background-color: var(--ns-light-blue); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Hover effect */
+button[commandfor="my-dialog"]:hover {
+    background-color: var(--ns-light-blue-1); 
+}
 
 /* Hulp voor gebruiker */
 
@@ -543,12 +573,19 @@ form > fieldset:nth-of-type(3){
 form > fieldset:nth-of-type(3) > fieldset:nth-of-type(2){
     background-color: #db0029;
 }
+
+
 /* 
 fieldset:nth-of-type(4) > fieldset{
     background-color: #ff0098;
 } */
 
-
+/* dialog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
 
 
 

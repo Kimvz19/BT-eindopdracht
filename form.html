@@ -25,6 +25,9 @@
     </header>
     <main>
         <form data-form-topic="myFormData">
+            <div>
+                <div class="progressbar"></div>
+            </div>
 
             <!-- 👻👻👻👻👻👻 -->
             <!-- Vraag 1a -->
@@ -35,9 +38,9 @@
                     <!-- Voorletter -->
                     <label>Voorletter(s)
                         <input type="text" name="voorl" minlength="1" maxlength="8" placeholder="A.B." required>
-                        <span class="status-icon"> </span> 
+                        <span class="status-icon"> </span>
                     </label>
-                    <span class="status-icon"> </span> 
+                    <span class="status-icon"> </span>
                     <!-- Tussenvoegsel -->
                     <label>Tussenvoegsel
                         <input type="text" name="tussenv" minlength="1" maxlength="11">
@@ -46,7 +49,7 @@
                     <!-- Achternaam -->
                     <label>Achternaam
                         <input type="text" name="achtern" pattern="[A-Za-z]+" required>
-                        <span class="status-icon"> </span> 
+                        <span class="status-icon"> </span>
                     </label>
                 </fieldset>
             </fieldset>
@@ -62,14 +65,24 @@
                     <!-- BSN nummer -->
                     <label>Burgerservicenummer overledene
                         <input type="text" name="tentacles" required>
+                        
                         <!-- ivoker command -->
                         <button type="button" commandfor="my-dialog" command="show-modal">info over BSN</button>
-                        <span class="status-icon"> </span> 
+                        <span class="status-icon"> </span>
                     </label>
+                
+                    <!-- dialoogvenster voor BSN uitleg -->
                     <dialog id="my-dialog">
-                        Hello world!
-                        <button type="button" commandfor="my-dialog" command="close">Close</button>
+                        <p>Het burgerservicenummer (BSN) is een uniek persoonsnummer dat in de eerste plaats bedoeld is
+                        voor het contact tussen burgers en de overheid. Organisaties buiten de overheid mogen het BSN
+                        alleen gebruiken als dat wettelijk is bepaald. Dit geldt bijvoorbeeld voor organisaties in de
+                        zorg en het onderwijs.</p>
+                        
+                        <!-- Sluitknop voor de dialoog -->
+                        <button  type="button" command="close" commandfor="my-dialog" >Close</button>
                     </dialog>
+                
+                    <!-- bron : info BSN : https://www.autoriteitpersoonsgegevens.nl/themas/identificatie/burgerservicenummer-bsn#:~:text=Het%20burgerservicenummer%20(BSN)%20is%20een,de%20zorg%20en%20het%20onderwijs.-->
                 </fieldset>
 
                 <fieldset>
@@ -101,8 +114,8 @@
                         <label><input type="radio" name="partner2" value="ja">Ja <small>Stuur een kopie
                                 mee</small></label>
                         <label>
-                            <input type="file" accept="image/png, image/jpeg" >
-                            
+                            <input type="file" accept="image/png, image/jpeg">
+
                         </label>
                     </fieldset>
 
@@ -161,7 +174,7 @@
                         <p>Had de overledene een testament?</p>
                         <label><input type="radio" name="testament" value="nee">Nee <small>Ga verder met vraag
                                 2.</small>
-                            </label>
+                        </label>
                         <label><input type="radio" name="testament" value="ja">Ja <small>Vul notarisgegevens
                                 in.</small></label>
                     </fieldset>
@@ -169,18 +182,18 @@
                     <fieldset>
                         <label>Protocolnummer notaris
                             <input type="text" name="protocolnummer">
-                            <span class="status-icon"> </span> 
+                            <span class="status-icon"> </span>
                         </label>
                     </fieldset>
 
                     <fieldset>
                         <label>Vestigingsplaats notaris
                             <input type="text" name="vestigingsplaats">
-                            <span class="status-icon"> </span> 
+                            <span class="status-icon"> </span>
                         </label>
                         <label>Datum van het testament of van de laatste wijziging
                             <input type="date" name="datum-testament">
-                            
+
                         </label>
                     </fieldset>
                 </fieldset>
@@ -195,4 +208,5 @@
     <!-- mijn eigen js bestandje -->
     <script src="script.js"></script>
 </body>
+
 </html>
