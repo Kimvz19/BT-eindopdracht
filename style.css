@@ -145,7 +145,7 @@ p {
 }
 
 a,
-b{
+b {
     color: var(--ns-blue);
     font-family: var(--NS-Sans-Bold);
     font-size: clamp(0.75rem, 0.6346rem + 0.4923vw, .9rem);
@@ -294,9 +294,75 @@ fieldset {
     padding: 20px;
     border-radius: 8px;
     width: 100%;
-    background-color: #dde8f0;
+    background-color: var(--ns-white);
 }
 
+label {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    gap: 8px;
+
+    transition: color 0.2s ease-in-out;
+    font-family: var(--NS-Sans-Bold);
+    color: var(--ns-blue);
+
+    width: 100%;
+    position: relative;
+}
+
+legend {
+    font-family: var(--NS-Inter);
+    color: var(--ns-white);
+    font-weight: 500;
+    background-color: var(--ns-blue);
+    padding: 12px 16px;
+    margin-left: 15px;
+    border-radius: 6px;
+    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+label input {
+    border-radius: 5px;
+    border: 2px solid #aac4d6;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    background: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+small {
+    font-size: 0.9rem;
+    color: var(--ns-grey-40);
+    margin-left: 26px;
+}
+
+
+label span {
+    position: absolute;
+    right: 15px;
+    top: 40px;
+
+}
+
+form>fieldset:nth-of-type(1) {
+    color: var(--ns-white);
+    background-color: var(--ns-yellow);
+    border: .1em var(--ns-blue) solid;
+}
+
+
+
+/****************************/
+/* ⭐️   styling form  ⭐️⭐️  */
+/***************************/
 fieldset:has(input[type="radio"]) {
     display: flex;
     flex-direction: column;
@@ -316,14 +382,14 @@ fieldset:has(input[type="radio"]) p {
     margin-bottom: 10px;
 }
 
-form > fieldset:nth-of-type(3),
-form > fieldset:nth-of-type(4) {
+form>fieldset:nth-of-type(3),
+form>fieldset:nth-of-type(4) {
     background-color: var(--ns-yellow);
     border: .1em var(--ns-blue) solid;
 }
 
-form > fieldset:nth-of-type(3) > fieldset,
-form > fieldset:nth-of-type(4) > fieldset {
+form>fieldset:nth-of-type(3)>fieldset,
+form>fieldset:nth-of-type(4)>fieldset {
     background-color: var(--ns-white);
 }
 
@@ -344,17 +410,6 @@ label input[type="radio"]:checked {
     box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
 }
 
-label {
-    display: flex;
-    align-items: flex-start;
-    font-size: 1rem;
-    color: #004466;
-    font-weight: 500;
-    cursor: pointer;
-    gap: 8px;
-    transition: color 0.2s ease-in-out;
-}
-
 label:hover input[type="radio"] {
     border-color: var(--ns-yellow);
 }
@@ -364,151 +419,76 @@ label:has(input[type="radio"]) {
     flex-direction: row;
 }
 
-small {
-    font-size: 0.9rem;
-    color: var(--ns-grey-40);
-    margin-left: 26px;
+form>fieldset:nth-of-type(1)>fieldset {
+    background-color: var(--ns-white);
 }
 
-form > fieldset:nth-of-type(1) {
-    color: #ffffff;
+form>fieldset:nth-of-type(2) {
     background-color: var(--ns-yellow);
     border: .1em var(--ns-blue) solid;
 }
 
-form > fieldset:nth-of-type(1) > fieldset {
+form>fieldset:nth-of-type(2)>fieldset {
     background-color: var(--ns-white);
 }
 
-form > fieldset:nth-of-type(2) {
-    background-color: var(--ns-yellow);
-    border: .1em var(--ns-blue) solid;
+form>fieldset:nth-of-type(2)>fieldset:nth-of-type(4) {
+    display: none;
 }
 
-form > fieldset:nth-of-type(2) > fieldset {
-    background-color: var(--ns-white);
+form>fieldset:nth-of-type(4) {
+    display: none;
 }
 
-legend {
-    font-family: var(--NS-Inter);
-    color: var(--ns-white);
-    font-weight: 500;
-    background-color: var(--ns-blue);
-    padding: 12px 16px;
-    margin-left: 15px;
-    border-radius: 6px;
-    font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-}
 
-label {
-    font-family: var(--NS-Sans-Bold);
-    color: var(--ns-blue);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 1rem;
-    width: 100%;
-    position: relative;
-}
-
-/* Inputvelden */
-label input {
-    border-radius: 5px;
-    border: 2px solid #aac4d6;
-    padding: 12px;
-    font-size: 1rem;
-    width: 100%;
-    max-width: 100%;
-    background: #ffffff;
-    transition: border-color 0.3s ease;
-}
-
-/* svg icon*/
-label span {
-    position: absolute;
-    right: 15px;
-    top: 40px;
-
-}
+/* invoker commands stylen */
 
 #my-dialog,
-#my-dialog2
-{
+#my-dialog2 {
     margin: auto;
     padding: 25px;
     border-radius: 25px;
 }
 
-#my-dialog2{
+#my-dialog2 {
     border: .2em var(--ns-blue) solid;
 }
 
 #my-dialog p,
-#my-dialog2 p{
+#my-dialog2 p {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     width: 100%;
 }
 
-#my-dialog button{
-   background-color: var(--ns-blue);
-   border-radius: 5px;
-   padding: 10px;
-   color:white;
+#my-dialog button {
+    background-color: var(--ns-blue);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
 }
 
 button[commandfor="my-dialog"],
-form>button:last-of-type{
-    background-color: var(--ns-light-blue); 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    text-align: center; 
+form>button:last-of-type {
+    background-color: var(--ns-light-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Hover effect */
+
 button[commandfor="my-dialog"]:hover,
 form>button:last-of-type:hover {
-    background-color: var(--ns-light-blue-1); 
+    background-color: var(--ns-light-blue-1);
 }
-
-
-form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4) {
-    display: none;
-}
-
-form > fieldset:nth-of-type(4) {
-    display: none;
-}
-
-
-@media (min-width: 700px) {
-    form {
-        width: 100%;
-        padding: 20px;
-    }
-    
-    fieldset {
-        padding: 15px;
-    }
-}
-
-@media (min-width: 1200px) {
-    form {
-        max-width: 900px;
-    }
-}
-
-
-
 
 
 /*⭐️⭐️⭐️⭐️⭐️⭐️⭐️*/
@@ -518,7 +498,7 @@ form > fieldset:nth-of-type(4) {
 /* ✨✨  validation for form  ✨✨ */
 
 /* input met voorletters > maakt hoofdletters */
-form >fieldset:nth-of-type(1) label:nth-of-type(1) input {
+form>fieldset:nth-of-type(1) label:nth-of-type(1) input {
     text-transform: uppercase;
 }
 
@@ -531,25 +511,23 @@ fieldset:nth-of-type(1) label:nth-of-type(2) input {
     text-transform: lowercase;
 }
 
-label input:focus + span {
+label input:focus+span {
     display: none;
 }
 
+label:not(:has(:required))::after {
+    content: " optioneel";
+    color: var(--ns-ovorange);
+}
 
 /*✅✅✅✅✅✅✅*/
 /*  Positief  */
 /*✅✅✅✅✅✅✅*/
 
-
-
 input:user-valid {
     border: .2em var(--ns-green) solid;
- }
-
-label:not(:has(:required))::after {
-	content: " optioneel";
-	color: var(--ns-ovorange);
 }
+
 
 /*❌❌❌❌❌❌❌*/
 /*  negatief  */
@@ -558,45 +536,6 @@ label:not(:has(:required))::after {
 input:user-invalid {
     border: .2em var(--ns-red-alert) solid;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* div:first-of-type{
-    background-color: #db0029;  
-    color: white;
-    font-family: sans-serif;
-    padding: .625rem 2rem .625rem 4.1875rem; 
-    /* https://www.ns.nl/platform/components/notification-bar.html bron voor modifier padding waardes */
-
-/* text-align: center; */
-/*  */
-/* custom properties aanmaken voor de kleuren, margins, enzv */
-/* General styling maken */
 
 
 
@@ -615,6 +554,17 @@ input:user-invalid {
 /****************************/
 /* ✨✨      Media      ✨✨ */
 /***************************/
+
+@media (min-width: 700px) {
+    form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
+}
 
 @media (min-width: 750px) {
     div {
@@ -654,5 +604,11 @@ input:user-invalid {
 
     div {
         max-width: 1200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    form {
+        max-width: 900px;
     }
 }
