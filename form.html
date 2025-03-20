@@ -16,9 +16,10 @@
             xml:space="preserve">
             <path d="M17.5,10.1L26.3,26H8.7L17.5,10.1 M17.5,8L7,27h21L17.5,8L17.5,8z" fill="white" />
             <path
-                d="M17.5,21L17.5,21c-0.3,0-0.5-0.2-0.5-0.5v-5c0-0.3,0.2-0.5,0.5-0.5l0,0c0.3,0,0.5,0.2,0.5,0.5v5C18,20.8,17.8,21,17.5,21z" fill="white" />
-            <rect x="17" y="19" width="1" height="2" fill="white"/>
-            <circle cx="17.5" cy="23.2" r="0.8" fill="white"/>
+                d="M17.5,21L17.5,21c-0.3,0-0.5-0.2-0.5-0.5v-5c0-0.3,0.2-0.5,0.5-0.5l0,0c0.3,0,0.5,0.2,0.5,0.5v5C18,20.8,17.8,21,17.5,21z"
+                fill="white" />
+            <rect x="17" y="19" width="1" height="2" fill="white" />
+            <circle cx="17.5" cy="23.2" r="0.8" fill="white" />
         </svg>
         <p>Let op: Dit is een schoolproject!</p>
     </header>
@@ -33,49 +34,71 @@
                 <fieldset>
                     <!-- Voorletter -->
                     <label>Voorletter(s)
-                        <input type="text" id="voorl" name="voorl" minlength="1" maxlength="8" placeholder="A.B.">
+                        <input type="text" name="voorl" minlength="1" maxlength="8" placeholder="A.B."
+                            required>
+                        <svg id="status-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+                        </svg>
                     </label>
                     <!-- Tussenvoegsel -->
                     <label>Tussenvoegsel
                         <input type="text" name="tussenv" minlength="1" maxlength="11">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+                        </svg>
                     </label>
                     <!-- Achternaam -->
                     <label>Achternaam
                         <input type="text" name="achtern" pattern="[A-Za-z]+" required>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+                        </svg>
                     </label>
                 </fieldset>
             </fieldset>
-        
+
+
             <!-- 👻👻👻👻👻👻 -->
             <!-- Vraag 1b -->
             <!-- 👻👻👻👻👻👻 -->
             <fieldset>
                 <legend>1b</legend>
-        
+
                 <fieldset>
                     <!-- BSN nummer -->
                     <label>Burgerservicenummer overledene
-                        <input type="text" name="tentacles">
-                        <a href="https://www.rijksoverheid.nl/...">info over BSN</a>
+                        <input type="text" name="tentacles" required>
+                        <!-- ivoker command -->
+                        <button type="button" commandfor="my-dialog" command="show-modal">info over BSN</button>
+
+                        <dialog id="my-dialog">
+                            Hello world!
+
+                            <button type="button" commandfor="my-dialog" command="close">Close</button>
+                        </dialog>
                     </label>
                 </fieldset>
-        
+
                 <fieldset>
                     <!-- Overlijdensdatum -->
                     <label>Overlijdensdatum
-                        <input type="date" name="overlijdensdatum" max="2025-03-21">
+                        <input type="date" name="overlijdensdatum" max="2025-03-21" required>
                     </label>
                 </fieldset>
-        
+
                 <fieldset>
                     <!-- Radiobutton - Partner? -->
                     <p>Was de overledene getrouwd of had de overledene een geregistreerd partner?</p>
                     <fieldset>
-                    <label><input type="radio" name="partner" value="nee">Nee <small>Ga verder met vraag 1c</small></label>
-                    <label><input type="radio" name="partner" value="ja">Ja</label>
+                        <label><input type="radio" name="partner" value="nee" required>Nee <small>Ga verder met vraag
+                                1c</small></label>
+                        <label><input type="radio" name="partner" value="ja" required>Ja</label>
+                    </fieldset>
                 </fieldset>
-                </fieldset>
-        
+
                 <!-- 👻👻👻👻👻👻 -->
                 <!-- Vervolg 1b -->
                 <!-- 👻👻👻👻👻👻 -->
@@ -85,16 +108,17 @@
                         <!-- Partner deel 2 -->
                         <p>Huwelijkse partnerschapsvoorwaarden?</p>
                         <label><input type="radio" name="partner2" value="nee">Nee</label>
-                        <label><input type="radio" name="partner2" value="ja">Ja <small>Stuur een kopie mee</small></label>
+                        <label><input type="radio" name="partner2" value="ja">Ja <small>Stuur een kopie
+                                mee</small></label>
                     </fieldset>
-        
+
                     <fieldset>
                         <!-- Partner deel 3 -->
                         <p>Hadden de overledene en diens partner een finaal verrekenbeding?</p>
                         <label><input type="radio" name="partner3" value="nee">Nee</label>
                         <label><input type="radio" name="partner3" value="ja">Ja</label>
                     </fieldset>
-        
+
                     <!-- Partner deel 4 -->
                     <fieldset>
                         <p>Datum huwelijkse of partnerschapsvoorwaarden</p>
@@ -104,26 +128,28 @@
                     </fieldset>
                 </fieldset>
             </fieldset>
-        
+
             <!-- 👻👻👻👻👻👻 -->
             <!-- Vraag 1c -->
             <!-- 👻👻👻👻👻👻 -->
- 
+
             <fieldset>
                 <legend>1c</legend>
                 <fieldset>
                     <fieldset>
                         <p>Had de overledene kinderen?</p>
-                        <label><input type="radio" name="kinderen" value="nee">Nee <small>Ga verder met vraag 1d.</small></label>
+                        <label><input type="radio" name="kinderen" value="nee">Nee <small>Ga verder met vraag
+                                1d.</small></label>
                         <label><input type="radio" name="kinderen" value="ja">Ja</label>
                     </fieldset>
-            
+
                     <fieldset>
                         <p>Is een van deze kinderen eerder overleden?</p>
-                        <label><input type="radio" name="kind-overleden" value="nee">Nee <small>Ga verder met vraag 1d.</small></label>
+                        <label><input type="radio" name="kind-overleden" value="nee">Nee <small>Ga verder met vraag
+                                1d.</small></label>
                         <label><input type="radio" name="kind-overleden" value="ja">Ja</label>
                     </fieldset>
-            
+
                     <fieldset>
                         <p>Had dit overleden kind zelf kinderen?</p>
                         <label><input type="radio" name="kleinkinderen" value="nee">Nee</label>
@@ -139,16 +165,18 @@
                 <fieldset>
                     <fieldset>
                         <p>Had de overledene een testament?</p>
-                        <label><input type="radio" name="testament" value="nee">Nee <small>Ga verder met vraag 2.</small></label>
-                        <label><input type="radio" name="testament" value="ja">Ja <small>Vul notarisgegevens in.</small></label>
+                        <label><input type="radio" name="testament" value="nee">Nee <small>Ga verder met vraag
+                                2.</small></label>
+                        <label><input type="radio" name="testament" value="ja">Ja <small>Vul notarisgegevens
+                                in.</small></label>
                     </fieldset>
-            
+
                     <fieldset>
                         <label>Protocolnummer notaris
                             <input type="text" name="protocolnummer">
                         </label>
                     </fieldset>
-            
+
                     <fieldset>
                         <label>Vestigingsplaats notaris
                             <input type="text" name="vestigingsplaats">
@@ -159,9 +187,14 @@
                     </fieldset>
                 </fieldset>
             </fieldset>
-        
+
         </form>
     </main>
+    <!-- invoker commands -->
+    <!-- polyfill automatically -->
+    <script type="module" async src="https://unpkg.com/invokers-polyfill@latest/invoker.min.js"></script>
+
+    <!-- mijn eigen js bestandje -->
     <script src="script.js"></script>
 </body>
 

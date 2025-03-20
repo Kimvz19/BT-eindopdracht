@@ -1,5 +1,16 @@
 console.log("hi");
 
+
+
+
+
+
+
+
+
+
+
+
 let achternaamInput = document.querySelector('input[name="achtern"]');
 
 achternaamInput.addEventListener('input', function() {
@@ -7,7 +18,6 @@ achternaamInput.addEventListener('input', function() {
         achternaamInput.value = achternaamInput.value.charAt(0).toUpperCase() + achternaamInput.value.slice(1);
     }
 });
- 
 
 
 //opslaan form
