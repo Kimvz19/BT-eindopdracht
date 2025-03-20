@@ -2,207 +2,170 @@
 console.log("hi");
 ////////////////////////////////////////////////////
 
-// Eerste letter is altijd hoofdletter
+//variabel aanmaken
 let achternaamInput = document.querySelector('input[name="achtern"]');
 
-achternaamInput.addEventListener('input', function() {
-    if (achternaamInput.value.length > 0) {
-        achternaamInput.value = achternaamInput.value.charAt(0).toUpperCase() + achternaamInput.value.slice(1);
-    }
+//function waarbij 1ste letter is hoofdletter ⭐️
+achternaamInput.addEventListener('input', () => {
+    achternaamInput.value = achternaamInput.value.charAt(0).toUpperCase() + achternaamInput.value.slice(1);
 });
+
 ////////////////////////////////////////////////////
 
 // Validatie svg veranderen
 // bron voor code : https://chatgpt.com/share/67dbd282-13e4-8000-b9e5-3a59843031d3
+// 50% geschreven door chat, 50% door mij
 function veranderSVG(event) {
-    // Controleer of het doel een tekstinvoer is
-    if (event.target.type !== 'text') {
-        return; // Stop de functie als het geen tekstinvoer is
-    }
+    // functie stopt als geen tekst is 
+    if (event.target.type !== 'text') return;
 
-    // Zoek de bijbehorende span voor de status-icoon
+    // checkt of de status icon er al is, anders wordt die toegevoegd
     let statusIcon = event.target.nextElementSibling;
-
-    // Controleer of het nextElementSibling een knop is of een element dat geen span is
-    if (statusIcon && statusIcon.tagName.toLowerCase() !== 'span') {
-        // Maak een nieuw element aan als het geen span is
-        statusIcon = document.createElement('span');  // Maak een nieuwe span voor de status-icoon
-        event.target.parentNode.appendChild(statusIcon);  // Voeg de nieuwe span toe na het invoerveld
+    if (!statusIcon || statusIcon.tagName.toLowerCase() !== 'span') {
+        statusIcon = document.createElement('span');
+        event.target.parentNode.appendChild(statusIcon);
     }
 
-    // Controleer of het invoerveld geldig is
-    if (event.target.validity.valid) {
-        // Als het veld geldig is, zet een vinkje
-        statusIcon.textContent = '✓';
-        statusIcon.style.color = '#009a42';  // Zet de kleur van het vinkje groen
-    } else {
-        // Als het veld ongeldig is, zet een kruisje
-        statusIcon.textContent = '✘';
-        statusIcon.style.color = '#db0029';  // Zet de kleur van het kruisje rood
-    }
+    //de validatie die wordt toegevoegd als neiuwe statusicon
+    // check voor user-valid en kruisje voor user-invalid
+    statusIcon.textContent = event.target.validity.valid ? '✓' : '✘';
+    statusIcon.style.color = event.target.validity.valid ? '#009a42' : '#db0029';
 }
 
-const invoervelden = document.querySelectorAll('input');
-invoervelden.forEach(function(input) {
-    input.addEventListener('input', veranderSVG); // Bij elke input wordt de functie aangeroepen
-});
+//variabele die alle inputs aanspreekt 
+let invoervelden = document.querySelectorAll('input');
+invoervelden.forEach(input => input.addEventListener('input', veranderSVG));
 
 ////////////////////////////////////////////////////
 
 // radio buttons - display none & block
-document.querySelector('input[name="partner"][value="ja"]').addEventListener('change', function() {
-    if (this.checked) {
-        // Verberg vraag 1c als "Ja" geselecteerd is
-        const fieldset1c = document.querySelector('form > fieldset:nth-of-type(3)');
-        fieldset1c.style.display = 'none';  // Verbergt vraag 1c
+// checkt of de radio  button name & value is geselecteerd of niet 
+// zo ja, wordt fieldset op display:block gezet, anders blijft het op display:none
 
-        // Toon het specifieke fieldset voor vraag 1b (ja)
-        const fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
-        fieldsetJa.style.display = 'block';  // Maakt het zichtbaar
+// Radio button met value ja 
+document.querySelector('input[name="partner"][value="ja"]').addEventListener('change', ({ target }) => {
+    if (!target.checked) return;
 
-        // Scroll naar het specifieke fieldset voor vraag 1b (ja) met een soepele animatie
-        fieldsetJa.scrollIntoView({ behavior: 'smooth' });
-    }
+    // laat rest van 1b zien
+    document.querySelector('form > fieldset:nth-of-type(3)').style.display = 'none';  
+    let fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
+    fieldsetJa.style.display = 'block';  
+    fieldsetJa.scrollIntoView({ behavior: 'smooth' });
 });
 
-// Event listener voor de radiobutton "Nee" in vraag 1b
-document.querySelector('input[name="partner"][value="nee"]').addEventListener('change', function() {
-    if (this.checked) {
-        // Verberg het specifieke fieldset voor vraag 1b (ja)
-        const fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
-        fieldsetJa.style.display = 'none';  // Verbergt de "Ja" sectie
+// Radio button met value nee 
+document.querySelector('input[name="partner"][value="nee"]').addEventListener('change', ({ target }) => {
+    if (!target.checked) return;
 
-        // Toon vraag 1c door display op 'block' te zetten
-        const fieldset1c = document.querySelector('form > fieldset:nth-of-type(3)');
-        fieldset1c.style.display = 'block';  // Maakt vraag 1c zichtbaar
-
-        // Scroll naar het 3e fieldset (vraag 1c) met een soepele animatie
-        fieldset1c.scrollIntoView({ behavior: 'smooth' });
-    }
-});
-
-// Initialiseer de visibiliteit van vraag 1c bij het laden van de pagina
-document.addEventListener('DOMContentLoaded', function() {
-    // Begin met vraag 1c verborgen
+    // laat vraag 1c zien 
+    document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)').style.display = 'none';  
     const fieldset1c = document.querySelector('form > fieldset:nth-of-type(3)');
-    fieldset1c.style.display = 'none';  // Verbergt vraag 1c
-
-    // Start vraag 1b in de standaardstatus (verberg "Ja" bij het laden)
-    const fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
-    fieldsetJa.style.display = 'none';  // Verbergt de "Ja" sectie bij het laden
+    fieldset1c.style.display = 'block';  
+    fieldset1c.scrollIntoView({ behavior: 'smooth' });
 });
 
-// Event listener voor de radiobuttons van "kinderen"
-document.querySelectorAll('input[name="kinderen"]').forEach(input => {
-    input.addEventListener('change', function() {
-        const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
+// laat vraag 1D zien , 1e vraag 1c
+document.querySelectorAll('input[name="kinderen"]').forEach(input => 
+    input.addEventListener('change', ({ target }) => {
+        document.querySelector('form > fieldset:nth-of-type(4)').style.display = 
+            target.value === "nee" ? 'block' : 'none';
+    })
+);
 
-        if (this.value === "nee") {
-            fieldset4.style.display = 'block'; // Toon fieldset 4
-            
-        } else if (this.value === "ja") {
-            fieldset4.style.display = 'none'; // Verberg fieldset 4
-        }
-    });
+// laat vraag 1D zien , 2e vraag 1c
+document.querySelectorAll('input[name="kind-overleden"]').forEach(input => 
+    input.addEventListener('change', ({ target }) => {
+        document.querySelector('form > fieldset:nth-of-type(4)').style.display = 
+            target.value === "nee" ? 'block' : 'none';
+    })
+);
+
+// zorgt ervoor dat als de pagina wordt re-load dat ze gesloten zijn.
+document.addEventListener('DOMContentLoaded', () => {
+    ['form > fieldset:nth-of-type(3)', 'form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)', 'form > fieldset:nth-of-type(4)']
+        .forEach(selector => document.querySelector(selector).style.display = 'none');
 });
 
-// Event listener voor de radiobuttons van "kind-overleden"
-document.querySelectorAll('input[name="kind-overleden"]').forEach(input => {
-    input.addEventListener('change', function() {
-        const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
 
-        if (this.value === "nee") {
-            fieldset4.style.display = 'block'; // Toon fieldset 4
-        } else if (this.value === "ja") {
-            fieldset4.style.display = 'none'; // Verberg fieldset 4
-        }
-    });
-});
-
-// Initialiseer de visibiliteit van fieldset 4 bij het laden van de pagina
-document.addEventListener('DOMContentLoaded', function() {
-    const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
-    fieldset4.style.display = 'none'; // Verberg fieldset 4 standaard
-});
 
 
 ////////////////////////////////////////////////////
 
-//opslaan form
-// Function to save form data to localStorage
-//Bron voor local storage : Chris Donker
+// Form local storage werkende maken!
+//Bron voor local storage : Chris Donker ⭐️
+
 function saveFormData() {
     console.log('test')
-    // Get all input elements from the acquirer-1 fieldset
+    // haalt alle inputs uit de form 
     const inputs = document.querySelectorAll('form fieldset label input');
 
-    // Create an object to store the form data
+    // maak object aan om formulierdata in op te slaan
     const formData = {};
 
-    // Loop through each input and save its value
+    // loop door elk input type en sla waarde op 
     inputs.forEach(input => {
-        // For radio buttons, only save if checked
+        // sla alleen checked radio's op 
         if (input.type === 'radio') {
             if (input.checked) {
                 formData[input.name] = input.id;
             }
         } else {
-            // For text inputs, save the value
+            // Voor tekst inputs, sla de waarde op
             formData[input.name] = input.value;
             console.log(formData);
 
         }
     });
 
-    // Save the form data to localStorage
+    // sla de form data op in local storage, string van json
     localStorage.setItem('formData', JSON.stringify(formData));
 }
 
-// Function to load form data from localStorage
+// Functie om de form data uit de local storage te halen
 function loadFormData() {
-    // Get the saved form data from localStorage
+    // haal de opgeslagen data uit de local storage
     const savedData = localStorage.getItem('formData');
 
-    // If there's no saved data, exit the function
+    // geen data? stop de functie
     if (!savedData) return;
 
-    // Parse the saved data
+    // opgeslagen data pakken en in een nieuwe variabel zetten 
     const formData = JSON.parse(savedData);
 
-    // Get all input elements from the acquirer-1 fieldset
+    // haal de inputs uit het document
     const inputs = document.querySelectorAll('form fieldset label input');
 
-    // Loop through each input and set its value from the saved data
+    // ga elk input langs en vul in met de formdata
     inputs.forEach(input => {
         if (input.type === 'radio') {
-            // For radio buttons, check if the ID matches the saved value
+            // vink aan als de naam overeenkomt uit formdata
             if (formData[input.name] === input.id) {
                 input.checked = true;
             }
         } else if (input.name in formData) {
-            // For text inputs, set the value
+            // voor tekst, zet de opgeslagen data erin
             input.value = formData[input.name];
         }
     });
 }
 
-// Function to attach event listeners to all form inputs
+// event listeners toevoegen aan form inputs
 function setupFormPersistence() {
-    // Get all input elements from the acquirer-1 fieldset
+    // haal alle inputs op 
     const inputs = document.querySelectorAll('form fieldset label input');
 
-    // Add change event listener to each input
+    // voeg een event listener voor wijzing aan elk input
     inputs.forEach(input => {
         input.addEventListener('input', saveFormData);
-        // For radio buttons, also listen for the change event
+        
         if (input.type === 'radio') {
             input.addEventListener('change', saveFormData);
         }
     });
 
-    // Load saved form data when the page loads
+    // Laad de opgeslagen formulierdata op wanneer de pagina geladen is
     loadFormData();
 }
 
-// Initialize form persistence when the DOM is fully loaded
+//when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', setupFormPersistence);
