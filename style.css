@@ -488,31 +488,65 @@ label span {
   
 }
 
+/* #my-dialog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+} */
+
 
 /* Hulp voor gebruiker */
 
-input[name="partner"][value="nee"]:checked {
-    /* Stijl hier aanpassen */
-    background-color: green; /* voorbeeld */
+/* radiobuttons 1B */
+/* input[name="partner"][value="nee"]:checked {
+    background-color: green; 
+}
+input[name="partner"][value="ja"]:checked {
+    background-color: hotpink;
 }
 
-/* Selector voor de radiobutton "Ja" als deze is geselecteerd */
-input[name="partner"][value="ja"]:checked {
-    /* Stijl hier aanpassen */
-    background-color: hotpink; /* voorbeeld */
+input[name="kinderen"][value="nee"]:checked {
+    background-color: green; 
 }
+
+input[name="kinderen"][value="ja"]:checked {
+    background-color: hotpink;
+}
+
+input[name="kind-overleden"][value="nee"]:checked {
+    background-color: green; 
+}
+
+input[name="kind-overleden"][value="ja"]:checked {
+    background-color: hotpink; 
+} */
+
 
 form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4) {
     display: none;
-    background-color: hotpink; /* voorbeeld */
+    background-color: hotpink; 
+}
+
+form > fieldset:nth-of-type(4) {
+    display: none;
+    background-color: purple; 
 }
 
 form > fieldset:nth-of-type(3){
     /* Je stijlen hier */
     display: none;
-    background-color: green;
+    background-color: aqua;
 }  
 
+form > fieldset:nth-of-type(3) > fieldset:nth-of-type(2){
+    background-color: #db0029;
+}
+/* 
+fieldset:nth-of-type(4) > fieldset{
+    background-color: #ff0098;
+} */
 
 
 

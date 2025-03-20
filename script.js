@@ -30,6 +30,8 @@ function veranderSVG(event) {
     }
 }
 
+////////////////////////////////////////////////////
+
 // Voeg de eventlistener toe aan alle invoervelden
 const invoervelden = document.querySelectorAll('input');
 invoervelden.forEach(function(input) {
@@ -80,7 +82,41 @@ document.addEventListener('DOMContentLoaded', function() {
     fieldsetJa.style.display = 'none';  // Verbergt de "Ja" sectie bij het laden
 });
 
+////////////////////////////////////////
+// voor vragen 1C
 
+
+// Event listener voor de radiobuttons van "kinderen"
+document.querySelectorAll('input[name="kinderen"]').forEach(input => {
+    input.addEventListener('change', function() {
+        const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
+
+        if (this.value === "nee") {
+            fieldset4.style.display = 'block'; // Toon fieldset 4
+        } else if (this.value === "ja") {
+            fieldset4.style.display = 'none'; // Verberg fieldset 4
+        }
+    });
+});
+
+// Event listener voor de radiobuttons van "kind-overleden"
+document.querySelectorAll('input[name="kind-overleden"]').forEach(input => {
+    input.addEventListener('change', function() {
+        const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
+
+        if (this.value === "nee") {
+            fieldset4.style.display = 'block'; // Toon fieldset 4
+        } else if (this.value === "ja") {
+            fieldset4.style.display = 'none'; // Verberg fieldset 4
+        }
+    });
+});
+
+// Initialiseer de visibiliteit van fieldset 4 bij het laden van de pagina
+document.addEventListener('DOMContentLoaded', function() {
+    const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
+    fieldset4.style.display = 'none'; // Verberg fieldset 4 standaard
+});
 
 
 
