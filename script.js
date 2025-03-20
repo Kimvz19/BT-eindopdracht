@@ -1,6 +1,18 @@
+// check - de console werkt! 💗
 console.log("hi");
+////////////////////////////////////////////////////
 
+// Eerste letter is altijd hoofdletter
+let achternaamInput = document.querySelector('input[name="achtern"]');
 
+achternaamInput.addEventListener('input', function() {
+    if (achternaamInput.value.length > 0) {
+        achternaamInput.value = achternaamInput.value.charAt(0).toUpperCase() + achternaamInput.value.slice(1);
+    }
+});
+////////////////////////////////////////////////////
+
+// Validatie svg veranderen
 // bron voor code : https://chatgpt.com/share/67dbd282-13e4-8000-b9e5-3a59843031d3
 function veranderSVG(event) {
     // Controleer of het doel een tekstinvoer is
@@ -30,16 +42,14 @@ function veranderSVG(event) {
     }
 }
 
-////////////////////////////////////////////////////
-
-// Voeg de eventlistener toe aan alle invoervelden
 const invoervelden = document.querySelectorAll('input');
 invoervelden.forEach(function(input) {
     input.addEventListener('input', veranderSVG); // Bij elke input wordt de functie aangeroepen
 });
 
+////////////////////////////////////////////////////
 
-// Event listener voor de radiobutton "Ja" in vraag 1b
+// radio buttons - display none & block
 document.querySelector('input[name="partner"][value="ja"]').addEventListener('change', function() {
     if (this.checked) {
         // Verberg vraag 1c als "Ja" geselecteerd is
@@ -82,10 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fieldsetJa.style.display = 'none';  // Verbergt de "Ja" sectie bij het laden
 });
 
-////////////////////////////////////////
-// voor vragen 1C
-
-
 // Event listener voor de radiobuttons van "kinderen"
 document.querySelectorAll('input[name="kinderen"]').forEach(input => {
     input.addEventListener('change', function() {
@@ -120,18 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
-
-
-let achternaamInput = document.querySelector('input[name="achtern"]');
-
-achternaamInput.addEventListener('input', function() {
-    if (achternaamInput.value.length > 0) {
-        achternaamInput.value = achternaamInput.value.charAt(0).toUpperCase() + achternaamInput.value.slice(1);
-    }
-});
-
+////////////////////////////////////////////////////
 
 //opslaan form
 // Function to save form data to localStorage
