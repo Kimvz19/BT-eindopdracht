@@ -528,7 +528,6 @@ input:user-valid {
     border: .2em var(--ns-green) solid;
 }
 
-
 /*❌❌❌❌❌❌❌*/
 /*  negatief  */
 /*❌❌❌❌❌❌❌*/
@@ -538,9 +537,6 @@ input:user-invalid {
 }
 
 
-
-
-
 /*********************************/
 /* ✨✨  Support van :has()  ✨✨ */
 /*********************************/
@@ -548,6 +544,34 @@ input:user-invalid {
 @supports not (selector(:has(*))) {
     article:nth-of-type(1) li a {
         margin-top: 25px;
+    }
+
+    fieldset {
+        display: block;
+    }
+
+    label input[type="radio"] {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    form>fieldset:nth-of-type(2)>fieldset:nth-of-type(4),
+    form>fieldset:nth-of-type(4) {
+        display: block;
+    }
+
+    label:after {
+        font-size: 0.8rem;
+        color: var(--ns-ovorange);
+        margin-left: 5px;
+    }
+
+    input:required:valid {
+        border: .2em var(--ns-green) solid;
+    }
+
+    input:required:invalid {
+        border: .2em var(--ns-red-alert) solid;
     }
 }
 
