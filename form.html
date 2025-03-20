@@ -64,12 +64,12 @@
                         <input type="text" name="tentacles" required>
                         <!-- ivoker command -->
                         <button type="button" commandfor="my-dialog" command="show-modal">info over BSN</button>
-
-                        <dialog id="my-dialog">
-                            Hello world!
-                            <button type="button" commandfor="my-dialog" command="close">Close</button>
-                        </dialog>
+                        <span class="status-icon"> </span> 
                     </label>
+                    <dialog id="my-dialog">
+                        Hello world!
+                        <button type="button" commandfor="my-dialog" command="close">Close</button>
+                    </dialog>
                 </fieldset>
 
                 <fieldset>
@@ -156,7 +156,8 @@
                     <fieldset>
                         <p>Had de overledene een testament?</p>
                         <label><input type="radio" name="testament" value="nee">Nee <small>Ga verder met vraag
-                                2.</small></label>
+                                2.</small>
+                            </label>
                         <label><input type="radio" name="testament" value="ja">Ja <small>Vul notarisgegevens
                                 in.</small></label>
                     </fieldset>
@@ -164,15 +165,18 @@
                     <fieldset>
                         <label>Protocolnummer notaris
                             <input type="text" name="protocolnummer">
+                            <span class="status-icon"> </span> 
                         </label>
                     </fieldset>
 
                     <fieldset>
                         <label>Vestigingsplaats notaris
                             <input type="text" name="vestigingsplaats">
+                            <span class="status-icon"> </span> 
                         </label>
                         <label>Datum van het testament of van de laatste wijziging
                             <input type="date" name="datum-testament">
+                            
                         </label>
                     </fieldset>
                 </fieldset>
@@ -187,5 +191,4 @@
     <!-- mijn eigen js bestandje -->
     <script src="script.js"></script>
 </body>
-
 </html>

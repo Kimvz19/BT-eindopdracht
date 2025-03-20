@@ -488,6 +488,38 @@ label span {
   
 }
 
+
+/* Hulp voor gebruiker */
+
+input[name="partner"][value="nee"]:checked {
+    /* Stijl hier aanpassen */
+    background-color: green; /* voorbeeld */
+}
+
+/* Selector voor de radiobutton "Ja" als deze is geselecteerd */
+input[name="partner"][value="ja"]:checked {
+    /* Stijl hier aanpassen */
+    background-color: hotpink; /* voorbeeld */
+}
+
+form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4) {
+    display: none;
+    background-color: hotpink; /* voorbeeld */
+}
+
+form > fieldset:nth-of-type(3){
+    /* Je stijlen hier */
+    display: none;
+    background-color: green;
+}  
+
+
+
+
+
+
+
+
 @media (min-width: 700px) {
     form {
         width: 100%;

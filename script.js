@@ -2,10 +2,21 @@ console.log("hi");
 
 
 // bron voor code : https://chatgpt.com/share/67dbd282-13e4-8000-b9e5-3a59843031d3
-// validatie van de svg in de input velden 
 function veranderSVG(event) {
+    // Controleer of het doel een tekstinvoer is
+    if (event.target.type !== 'text') {
+        return; // Stop de functie als het geen tekstinvoer is
+    }
+
     // Zoek de bijbehorende span voor de status-icoon
-    const statusIcon = event.target.nextElementSibling;
+    let statusIcon = event.target.nextElementSibling;
+
+    // Controleer of het nextElementSibling een knop is of een element dat geen span is
+    if (statusIcon && statusIcon.tagName.toLowerCase() !== 'span') {
+        // Maak een nieuw element aan als het geen span is
+        statusIcon = document.createElement('span');  // Maak een nieuwe span voor de status-icoon
+        event.target.parentNode.appendChild(statusIcon);  // Voeg de nieuwe span toe na het invoerveld
+    }
 
     // Controleer of het invoerveld geldig is
     if (event.target.validity.valid) {
@@ -25,6 +36,49 @@ invoervelden.forEach(function(input) {
     input.addEventListener('input', veranderSVG); // Bij elke input wordt de functie aangeroepen
 });
 
+
+// Event listener voor de radiobutton "Ja" in vraag 1b
+document.querySelector('input[name="partner"][value="ja"]').addEventListener('change', function() {
+    if (this.checked) {
+        // Verberg vraag 1c als "Ja" geselecteerd is
+        const fieldset1c = document.querySelector('form > fieldset:nth-of-type(3)');
+        fieldset1c.style.display = 'none';  // Verbergt vraag 1c
+
+        // Toon het specifieke fieldset voor vraag 1b (ja)
+        const fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
+        fieldsetJa.style.display = 'block';  // Maakt het zichtbaar
+
+        // Scroll naar het specifieke fieldset voor vraag 1b (ja) met een soepele animatie
+        fieldsetJa.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// Event listener voor de radiobutton "Nee" in vraag 1b
+document.querySelector('input[name="partner"][value="nee"]').addEventListener('change', function() {
+    if (this.checked) {
+        // Verberg het specifieke fieldset voor vraag 1b (ja)
+        const fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
+        fieldsetJa.style.display = 'none';  // Verbergt de "Ja" sectie
+
+        // Toon vraag 1c door display op 'block' te zetten
+        const fieldset1c = document.querySelector('form > fieldset:nth-of-type(3)');
+        fieldset1c.style.display = 'block';  // Maakt vraag 1c zichtbaar
+
+        // Scroll naar het 3e fieldset (vraag 1c) met een soepele animatie
+        fieldset1c.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// Initialiseer de visibiliteit van vraag 1c bij het laden van de pagina
+document.addEventListener('DOMContentLoaded', function() {
+    // Begin met vraag 1c verborgen
+    const fieldset1c = document.querySelector('form > fieldset:nth-of-type(3)');
+    fieldset1c.style.display = 'none';  // Verbergt vraag 1c
+
+    // Start vraag 1b in de standaardstatus (verberg "Ja" bij het laden)
+    const fieldsetJa = document.querySelector('form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4)');
+    fieldsetJa.style.display = 'none';  // Verbergt de "Ja" sectie bij het laden
+});
 
 
 
