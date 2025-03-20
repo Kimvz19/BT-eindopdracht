@@ -25,10 +25,6 @@
     </header>
     <main>
         <form data-form-topic="myFormData">
-            <div>
-                <div class="progressbar"></div>
-            </div>
-
             <!-- 👻👻👻👻👻👻 -->
             <!-- Vraag 1a -->
             <!-- 👻👻👻👻👻👻 -->
@@ -110,11 +106,11 @@
                     <fieldset>
                         <!-- Partner deel 2 -->
                         <p>Huwelijkse partnerschapsvoorwaarden?</p>
-                        <label><input type="radio" name="partner2" value="nee">Nee</label>
-                        <label><input type="radio" name="partner2" value="ja">Ja <small>Stuur een kopie
+                        <label><input type="radio" name="partner2" value="nee" required>Nee</label>
+                        <label><input type="radio" name="partner2" value="ja" required>Ja <small>Stuur een kopie
                                 mee</small></label>
                         <label>
-                            <input type="file" accept="image/png, image/jpeg">
+                            <input type="file" accept="image/png, image/jpeg" required>
 
                         </label>
                     </fieldset>
@@ -122,15 +118,15 @@
                     <fieldset>
                         <!-- Partner deel 3 -->
                         <p>Hadden de overledene en diens partner een finaal verrekenbeding?</p>
-                        <label><input type="radio" name="partner3" value="nee">Nee</label>
-                        <label><input type="radio" name="partner3" value="ja">Ja</label>
+                        <label><input type="radio" name="partner3" value="nee" required>Nee</label>
+                        <label><input type="radio" name="partner3" value="ja" required>Ja</label>
                     </fieldset>
 
                     <!-- Partner deel 4 -->
                     <fieldset>
                         <p>Datum huwelijkse of partnerschapsvoorwaarden</p>
                         <label>
-                            <input type="date" name="datum-huwelijk" max="2025-03-24">
+                            <input type="date" name="datum-huwelijk" max="2025-03-24" required>
                         </label>
                     </fieldset>
                 </fieldset>
@@ -145,22 +141,22 @@
                 <fieldset>
                     <fieldset>
                         <p>Had de overledene kinderen?</p>
-                        <label><input type="radio" name="kinderen" value="nee">Nee <small>Ga verder met vraag
+                        <label><input type="radio" name="kinderen" value="nee" required>Nee <small>Ga verder met vraag
                                 1d.</small></label>
-                        <label><input type="radio" name="kinderen" value="ja">Ja</label>
+                        <label><input type="radio" name="kinderen" value="ja" required>Ja</label>
                     </fieldset>
 
                     <fieldset>
                         <p>Is een van deze kinderen eerder overleden?</p>
-                        <label><input type="radio" name="kind-overleden" value="nee">Nee <small>Ga verder met vraag
+                        <label><input type="radio" name="kind-overleden" value="nee" required>Nee <small>Ga verder met vraag
                                 1d.</small></label>
-                        <label><input type="radio" name="kind-overleden" value="ja">Ja</label>
+                        <label><input type="radio" name="kind-overleden" value="ja" required>Ja</label>
                     </fieldset>
 
                     <fieldset>
                         <p>Had dit overleden kind zelf kinderen?</p>
-                        <label><input type="radio" name="kleinkinderen" value="nee">Nee</label>
-                        <label><input type="radio" name="kleinkinderen" value="ja">Ja</label>
+                        <label><input type="radio" name="kleinkinderen" value="nee" required>Nee</label>
+                        <label><input type="radio" name="kleinkinderen" value="ja" required>Ja</label>
                     </fieldset>
                 </fieldset>
             </fieldset>
@@ -172,32 +168,33 @@
                 <fieldset>
                     <fieldset>
                         <p>Had de overledene een testament?</p>
-                        <label><input type="radio" name="testament" value="nee">Nee <small>Ga verder met vraag
-                                2.</small>
+                        <label><input type="radio" name="testament" value="nee" required>Nee 
                         </label>
-                        <label><input type="radio" name="testament" value="ja">Ja <small>Vul notarisgegevens
+                        <label><input type="radio" name="testament" value="ja" required>Ja <small>Vul notarisgegevens
                                 in.</small></label>
                     </fieldset>
 
                     <fieldset>
                         <label>Protocolnummer notaris
-                            <input type="text" name="protocolnummer">
+                            <input type="text" name="protocolnummer" required>
                             <span class="status-icon"> </span>
                         </label>
                     </fieldset>
 
                     <fieldset>
                         <label>Vestigingsplaats notaris
-                            <input type="text" name="vestigingsplaats">
+                            <input type="text" name="vestigingsplaats" required>
                             <span class="status-icon"> </span>
                         </label>
                         <label>Datum van het testament of van de laatste wijziging
-                            <input type="date" name="datum-testament">
+                            <input type="date" name="datum-testament" required>
 
                         </label>
                     </fieldset>
                 </fieldset>
             </fieldset>
+
+            <button type="button">submit</button>
 
         </form>
     </main>

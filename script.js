@@ -93,6 +93,7 @@ document.querySelectorAll('input[name="kinderen"]').forEach(input => {
 
         if (this.value === "nee") {
             fieldset4.style.display = 'block'; // Toon fieldset 4
+            
         } else if (this.value === "ja") {
             fieldset4.style.display = 'none'; // Verberg fieldset 4
         }
@@ -117,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const fieldset4 = document.querySelector('form > fieldset:nth-of-type(4)');
     fieldset4.style.display = 'none'; // Verberg fieldset 4 standaard
 });
+
+
+
 
 
 

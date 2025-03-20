@@ -508,7 +508,8 @@ label span {
    color:white;
 }
 
-button[commandfor="my-dialog"] {
+button[commandfor="my-dialog"],
+form>button:last-of-type{
     background-color: var(--ns-light-blue); 
     color: white; 
     border: none; 
@@ -523,7 +524,8 @@ button[commandfor="my-dialog"] {
 }
 
 /* Hover effect */
-button[commandfor="my-dialog"]:hover {
+button[commandfor="my-dialog"]:hover,
+form>button:last-of-type:hover {
     background-color: var(--ns-light-blue-1); 
 }
 
@@ -556,23 +558,20 @@ input[name="kind-overleden"][value="ja"]:checked {
 
 form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4) {
     display: none;
-    background-color: hotpink; 
 }
 
 form > fieldset:nth-of-type(4) {
     display: none;
-    background-color: purple; 
 }
 
-form > fieldset:nth-of-type(3){
-    /* Je stijlen hier */
+/* form > fieldset:nth-of-type(3){
     display: none;
     background-color: aqua;
-}  
+}   */
 
-form > fieldset:nth-of-type(3) > fieldset:nth-of-type(2){
+/* form > fieldset:nth-of-type(3) > fieldset:nth-of-type(2){
     background-color: #db0029;
-}
+} */
 
 
 /* 
