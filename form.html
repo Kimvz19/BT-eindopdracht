@@ -105,26 +105,10 @@
                 <fieldset>
                     <!-- BSN nummer -->
                     <label>Burgerservicenummer overledene
-                        <input type="text" name="tentacles" required>
+                        <input type="text" name="bsnNummer" placeholder="voer BSN nummer in" required>
 
                         <!-- ivoker command -->
                         <button type="button" commandfor="my-dialog" command="show-modal">info over BSN</button>
-                        <span id="statusIcon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                version="1.1" id="Layer_1" x="0px" y="0px" width="35px" height="35px"
-                                viewBox="0 0 35 35" enable-background="new 0 0 35 35" xml:space="preserve">
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M26,28H9c-0.3,0-0.5-0.2-0.5-0.5v-0.1C8.5,27.2,8.7,27,9,27H26c0.3,0,0.5,0.2,0.5,0.5v0.1C26.5,27.8,26.3,28,26,28z" />
-                                    </g>
-                                    <g>
-                                        <path
-                                            d="M24.4,18.7L13.2,7.5h-1.4L9.5,9.8v1.4l11.2,11.2l5.6,1.9L24.4,18.7z M10.5,10.8v-0.6l1.7-1.7h0.6l10.8,10.8l0.8,2.4 l-0.7,0.7l-2.4-0.8L10.5,10.8z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </span>
                     </label>
 
                     <!-- dialoogvenster voor BSN uitleg -->
@@ -235,12 +219,13 @@
                         </label>
                         <label><input type="radio" name="testament" value="ja" required>Ja <small>Vul notarisgegevens
                                 in.</small>
-                            </label>
+                        </label>
                     </fieldset>
 
                     <fieldset>
                         <label>Protocolnummer notaris
-                            <input type="text" name="protocolnummer" required>
+                            <input type="text" name="protocolnummer" pattern="\d{4,6}" minlength="4" maxlength="10"
+                                placeholder="123456" required>
                             <span id="statusIcon">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     version="1.1" id="Layer_1" x="0px" y="0px" width="35px" height="35px"
@@ -262,7 +247,7 @@
 
                     <fieldset>
                         <label>Vestigingsplaats notaris
-                            <input type="text" name="vestigingsplaats" required>
+                            <input type="text" name="vestigingsplaats" placeholder="bv. Amsterdam" required>
                             <span id="statusIcon">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     version="1.1" id="Layer_1" x="0px" y="0px" width="35px" height="35px"
@@ -281,14 +266,17 @@
                             </span>
                         </label>
                         <label>Datum van het testament of van de laatste wijziging
-                            <input type="date" name="datum-testament" required>
+                            <input type="date" name="datum-testament" max="2025-03-21" required>
 
                         </label>
                     </fieldset>
                 </fieldset>
             </fieldset>
 
-            <button type="button">submit</button>
+            <button type="button" commandfor="my-dialog2" command="show-modal">Submit</button>
+            <dialog id="my-dialog2">
+                <p>Bedankt voor het invullen!</p>
+            </dialog>
 
         </form>
     </main>

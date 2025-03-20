@@ -9,7 +9,6 @@
     list-style: none;
 }
 
-
 /****************************/
 /* ✨✨      FONTS      ✨✨ */
 /***************************/
@@ -27,7 +26,6 @@
 
 
 body {
-
     /****************************/
     /*✨✨ Custom properties ✨✨*/
     /****************************/
@@ -488,13 +486,20 @@ label span {
 
 }
 
-#my-dialog {
+#my-dialog,
+#my-dialog2
+{
     margin: auto;
     padding: 25px;
     border-radius: 25px;
 }
 
-#my-dialog p{
+#my-dialog2{
+    border: .2em var(--ns-blue) solid;
+}
+
+#my-dialog p,
+#my-dialog2 p{
     display: flex;
     flex-direction: column;
     max-width: 500px;
@@ -529,32 +534,6 @@ form>button:last-of-type:hover {
     background-color: var(--ns-light-blue-1); 
 }
 
-/* Hulp voor gebruiker */
-
-/* radiobuttons 1B */
-/* input[name="partner"][value="nee"]:checked {
-    background-color: green; 
-}
-input[name="partner"][value="ja"]:checked {
-    background-color: hotpink;
-}
-
-input[name="kinderen"][value="nee"]:checked {
-    background-color: green; 
-}
-
-input[name="kinderen"][value="ja"]:checked {
-    background-color: hotpink;
-}
-
-input[name="kind-overleden"][value="nee"]:checked {
-    background-color: green; 
-}
-
-input[name="kind-overleden"][value="ja"]:checked {
-    background-color: hotpink; 
-} */
-
 
 form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4) {
     display: none;
@@ -563,31 +542,6 @@ form > fieldset:nth-of-type(2) > fieldset:nth-of-type(4) {
 form > fieldset:nth-of-type(4) {
     display: none;
 }
-
-/* form > fieldset:nth-of-type(3){
-    display: none;
-    background-color: aqua;
-}   */
-
-/* form > fieldset:nth-of-type(3) > fieldset:nth-of-type(2){
-    background-color: #db0029;
-} */
-
-
-/* 
-fieldset:nth-of-type(4) > fieldset{
-    background-color: #ff0098;
-} */
-
-/* dialog{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} */
-
-
-
 
 
 @media (min-width: 700px) {
@@ -618,8 +572,12 @@ fieldset:nth-of-type(4) > fieldset{
 /* ✨✨  validation for form  ✨✨ */
 
 /* input met voorletters > maakt hoofdletters */
-fieldset:nth-of-type(1) label:nth-of-type(1) input {
+form >fieldset:nth-of-type(1) label:nth-of-type(1) input {
     text-transform: uppercase;
+}
+
+fieldset:nth-of-type(1) label:nth-of-type(1) input {
+    text-transform: lowercase;
 }
 
 /* input met tussenletters > maakt geen hoofdletters */
@@ -646,7 +604,6 @@ label:not(:has(:required))::after {
 	content: " optioneel";
 	color: var(--ns-ovorange);
 }
-
 
 /*❌❌❌❌❌❌❌*/
 /*  negatief  */
