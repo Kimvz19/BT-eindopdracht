@@ -1,6 +1,30 @@
 console.log("hi");
 
 
+// bron voor code : https://chatgpt.com/share/67dbd282-13e4-8000-b9e5-3a59843031d3
+// validatie van de svg in de input velden 
+function veranderSVG(event) {
+    // Zoek de bijbehorende span voor de status-icoon
+    const statusIcon = event.target.nextElementSibling;
+
+    // Controleer of het invoerveld geldig is
+    if (event.target.validity.valid) {
+        // Als het veld geldig is, zet een vinkje
+        statusIcon.textContent = '✓';
+        statusIcon.style.color = '#009a42';  // Zet de kleur van het vinkje groen
+    } else {
+        // Als het veld ongeldig is, zet een kruisje
+        statusIcon.textContent = '✘';
+        statusIcon.style.color = '#db0029';  // Zet de kleur van het kruisje rood
+    }
+}
+
+// Voeg de eventlistener toe aan alle invoervelden
+const invoervelden = document.querySelectorAll('input');
+invoervelden.forEach(function(input) {
+    input.addEventListener('input', veranderSVG); // Bij elke input wordt de functie aangeroepen
+});
+
 
 
 
