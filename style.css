@@ -24,8 +24,7 @@
     src: url("assets/CartoGothicStd-Book.otf") format("opentype");
 }
 
-
-body {
+:root {
     /****************************/
     /*✨✨ Custom properties ✨✨*/
     /****************************/
@@ -62,6 +61,7 @@ body {
     --ns-light-blue-1: #0079d3;
     --ns-light-blue-2: #005ca0;
     --ns-light-blue-3: #ebf5ff;
+
     /* kleur van de tekst bron : https://www.ns.nl/klantenservice/betalen/ovpay.html */
     --ns-light-blue-4: rgb(0, 99, 211);
     --ns-yellow-2: #ffb519;
@@ -88,7 +88,7 @@ body {
 /* ✨✨      Basics     ✨✨ */
 /***************************/
 
-
+/* ❌ melding bovenaan de pagina ❌ */
 header {
     background-color: var(--ns-red-alert);
     width: 100%;
@@ -96,13 +96,12 @@ header {
     justify-content: center;
 }
 
-/* ❌ melding bovenaan de pagina ❌ */
-
 header p {
     color: var(--ns-white);
     margin: 10px 7px 7px 7px;
 }
 
+/* komt voor in de banner - home page*/
 /* 📈 decoratieve lijn 📈*/
 hr {
     height: 4px;
@@ -113,7 +112,10 @@ hr {
     border-color: transparent;
 }
 
-/* 🍀 Headings 🍀*/
+/****************************/
+/*      🍀 Headings 🍀      */
+/***************************/
+
 h1,
 h2 {
     font-family: var(--NS-Sans-Bold);
@@ -135,7 +137,6 @@ summary {
     font-size: clamp(0.875rem, 0.7596rem + 0.4923vw, 1.2rem);
 }
 
-
 p {
     font-family: var(--NS-Inter);
     font-weight: 200;
@@ -152,53 +153,13 @@ b{
 
 
 /****************************/
-/* ✨✨STYLING INDEX  ✨✨ */
+/*   ✨✨STYLING HOME   ✨✨ */
 /***************************/
 
 main {
     /* Bron clamp generator : https://clamp-generator.netlify.app/  */
     margin: calc(clamp(0.875rem, 0.246vw + 0.817rem, 1.125rem));
     gap: 20px;
-    /* max-width: fit-content; */
-}
-
-article:nth-of-type(1) {
-    --padding-top: 55px;
-    --padding-left: 45px;
-
-    background-color: var(--ns-light-blue-3);
-    padding-left: var(--padding-left);
-    padding-right: var(--padding-right);
-    padding-bottom: var(--padding-bottom);
-    padding-top: var(--padding-top);
-
-}
-
-article:nth-of-type(1) li {
-    margin-top: 5px;
-}
-
-article:nth-of-type(1) img {
-    width: 100%;
-}
-
-/* button in de article */
-article:nth-of-type(1) a {
-    color: var(--ns-blue);
-    background-color: var(--ns-yellow);
-    font-family: var(--NS-Sans-Bold);
-
-    cursor: pointer;
-    border-radius: 6px;
-    text-align: center;
-    text-decoration: none;
-    border-color: transparent;
-    padding: 15px 20px;
-}
-
-article:nth-of-type(1) li:has(a),
-article:nth-of-type(1) li hr {
-    margin-top: 25px;
 }
 
 div {
@@ -259,65 +220,50 @@ summary::after {
 }
 
 details[open] summary::after {
-    content: "−";
+    content: "-";
 }
 
-/*********************************/
-/* ✨✨  Support van :has()   ✨✨ */
-/*********************************/
+/********************/
+/* article styling */
+/********************/
 
-@supports not (selector(:has(*))) {
-    article:nth-of-type(1) li a {
-        margin-top: 25px;
-    }
-}
+article:nth-of-type(1) {
+    --padding-top: 55px;
+    --padding-left: 45px;
 
-
-/****************************/
-/* ✨✨      Media      ✨✨ */
-/***************************/
-
-@media (min-width: 750px) {
-
-    div {
-        flex-direction: row;
-    }
-
-    div>section {
-        max-width: 50%;
-    }
-
+    background-color: var(--ns-light-blue-3);
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+    padding-bottom: var(--padding-bottom);
+    padding-top: var(--padding-top);
 
 }
 
-@media (min-width: 900px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+article:nth-of-type(1) li {
+    margin-top: 5px;
+}
 
-    article:nth-of-type(1) {
-        --padding-top: 80px;
-        --padding-left: 80px;
+article:nth-of-type(1) img {
+    width: 100%;
+}
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 1200px;
-    }
+/* button in de article */
+article:nth-of-type(1) a {
+    color: var(--ns-blue);
+    background-color: var(--ns-yellow);
+    font-family: var(--NS-Sans-Bold);
 
-    article:nth-of-type(1) ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    border-color: transparent;
+    padding: 15px 20px;
+}
 
-    div {
-        max-width: 1200px;
-    }
+article:nth-of-type(1) li:has(a),
+article:nth-of-type(1) li hr {
+    margin-top: 25px;
 }
 
 
@@ -651,3 +597,62 @@ input:user-invalid {
 /*  */
 /* custom properties aanmaken voor de kleuren, margins, enzv */
 /* General styling maken */
+
+
+
+
+
+/*********************************/
+/* ✨✨  Support van :has()  ✨✨ */
+/*********************************/
+
+@supports not (selector(:has(*))) {
+    article:nth-of-type(1) li a {
+        margin-top: 25px;
+    }
+}
+
+/****************************/
+/* ✨✨      Media      ✨✨ */
+/***************************/
+
+@media (min-width: 750px) {
+    div {
+        flex-direction: row;
+    }
+
+    div>section {
+        max-width: 50%;
+    }
+
+}
+
+@media (min-width: 900px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    article:nth-of-type(1) {
+        --padding-top: 80px;
+        --padding-left: 80px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+    }
+
+    article:nth-of-type(1) ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    div {
+        max-width: 1200px;
+    }
+}
