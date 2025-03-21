@@ -536,7 +536,6 @@ input:user-invalid {
     border: .2em var(--ns-red-alert) solid;
 }
 
-
 /*********************************/
 /* ✨✨  Support van :has()  ✨✨ */
 /*********************************/
